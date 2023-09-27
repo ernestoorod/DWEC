@@ -1,7 +1,7 @@
-var nombre = prompt("Por favor, ingresa tu nombre:");
+let nombre = prompt("Por favor, ingresa tu nombre:");
 
-var localidad = prompt("Ahora, ingresa tu localidad:");
+let localidad = prompt("Ahora, ingresa tu localidad:");
 
-var mensaje = "Hola " + nombre + ", eres de " + localidad + ".";
+let mensaje = "Hola " + nombre + ", eres de " + localidad + ".";
 
 console.log(mensaje);
