@@ -3,39 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practica_UT02</title>
+    <title>DWEC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://blog.interfell.com/hubfs/JavaScript%20un%20lenguaje%20de%20programaci%C3%B3n.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo con transparencia */
+        }
+
+        td {
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        table#Lista_de_practicas {
+            background-color: rgba(78, 78, 78, 0.8);
+        }
+
+        table#Lista_de_ejercicios {
+            background-color: rgba(88, 88, 88, 1);
+            height: 100%;
+        }
+
+        #practicas-container {
+            text-align: center;
+        }
+
+        #practicas-container a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+        }
+
+        #practicas-container a:hover {
+            text-decoration: underline;
+        }
+
+        #lista-ejercicios-container {
+            text-align: center;
+            position: absolute;
+            top: 0; /* Alinear en la parte superior de la página */
+            width: 100%;
+        }
+
+        h2 {
+            text-decoration: underline;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>UT02: Fundamentos de JavaScript</h1>
-    <h2>Ejercicios de tipos de datos y operadores</h2>
-    <ul>
-        <h3><li><a href="./PR0201.html">PR0201: Tipos de datos (I)</a></li></h3>
-        <h3><li><a href="./PR0202.html">PR0202: Tipos de datos (II)</a></li></h3>
-        <h3><li><a href="./PR0203.html">PR0203: Tipos de datos (III)</a></li></h3>
-        <h3><li><a href="./PR0204.html">PR0204: Tipos de datos y operadores (IV)</a></li></h3>
-    </ul>
-    <h2>Ejercicios de condicionales y bucles</h2>
-    <ul>
-        <h3><li><a href="./PR0205.html">PR0205: Condicionales y bucles (I)</a></li></h3>
-        <h3><li><a href="./PR0206.html">PR0206: Condicionales y bucles (II)</a></li></h3>
-        <h3><li><a href="./PR0207.html">PR0207: Condicionales y bucles (III)</a></li></h3>
-        <h3><li><a href="./PR0208.html">PR0208: Condicionales y bucles (IV)</a></li></h3>
-        <h3><li><a href="./PR0209.html">PR0209: Condicionales y bucles (V)</a></li></h3>
-        <h3><li><a href="./PR0210.html">PR0210: Condicionales y bucles (VI)</a></li></h3>
-        <h3><li><a href="./PR0211.html">PR0211: Condicionales y bucles (VII)</a></li></h3>
-    </ul>
-    <h2>Ejercicios de funciones</h2>
-    <ul>
-        <h3><li><a href="./PR0212.html">PR0212: Funciones (I)</a></li></h3>
-        <h3><li><a href="./PR0213.html">PR0213: Funciones (II)</a></li></h3>
-        <h3><li><a href="./PR0214.html">PR0214: Funciones (III)</a></li></h3>
-        <h3><li><a href="./PR0215.html">PR0215: Funciones (IV)</a></li></h3>
-        <h3><li><a href="./PR0216.html">PR0216: Funciones (V)</a></li></h3>
-        <h3><li><a href="./PR0217.html">PR0217: Funciones (VI)</a></li></h3>
-        <h3><li><a href="./PR0218.html">PR0218: Funciones (VII)</a></li></h3>
-        <h3><li><a href="./PR0219.html">PR0219: Funciones (VIII)</a></li></h3>
-        <h3><li><a href="./PR0220.html">PR0220: Funciones (IX)</a></li></h3>
-        <h3><li><a href="./PR0221.html">PR0221: Funciones (X)</a></li></h3>
-    </ul>
+    <table id="Lista_de_practicas">
+        <tr>
+            <td>
+                <h1>Lista de prácticas:</h1>
+                <div id="practicas-container">
+                    <a href="../Practica_UT01/UT01.html">Práctica 1</a>
+                    <a href="../Practica_UT02/UT02.html">Práctica 2</a>
+                    <a href="../Practica_UT03/UT03.html">Práctica 3</a>
+                    <a href="">Práctica 4</a>
+                    <a href="">Práctica 5</a>
+                    <a href="">Práctica 6</a>
+                    <a href="">Práctica 7</a>
+                    <a href="">Práctica 8</a>
+                    <a href="">Práctica 9</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table id="Lista_de_ejercicios">
+        <tr>
+            <td>
+                <h1>UT02: Fundamentos de JavaScript</h1>
+                    <h2>Ejercicios de tipos de datos y operadores</h2>
+                        <ul>
+                            <h3><a href="./PR0201.html">PR0201: Tipos de datos (I)</a></h3>
+                            <h3><a href="./PR0202.html">PR0202: Tipos de datos (II)</a></h3>
+                            <h3><a href="./PR0203.html">PR0203: Tipos de datos (III)</a></h3>
+                            <h3><a href="./PR0204.html">PR0204: Tipos de datos y operadores (IV)</a></h3>
+                        </ul>
+                    <h2>Ejercicios de condicionales y bucles</h2>
+                        <ul>
+                            <h3><a href="./PR0205.html">PR0205: Condicionales y bucles (I)</a></h3>
+                            <h3><a href="./PR0206.html">PR0206: Condicionales y bucles (II)</a></h3>
+                            <h3><a href="./PR0207.html">PR0207: Condicionales y bucles (III)</a></h3>
+                            <h3><a href="./PR0208.html">PR0208: Condicionales y bucles (IV)</a></h3>
+                            <h3><a href="./PR0209.html">PR0209: Condicionales y bucles (V)</a></h3>
+                            <h3><a href="./PR0210.html">PR0210: Condicionales y bucles (VI)</a></h3>
+                            <h3><a href="./PR0211.html">PR0211: Condicionales y bucles (VII)</a></h3>
+                        </ul>
+                    <h2>Ejercicios de funciones</h2>
+                        <ul>
+                            <h3><a href="./PR0212.html">PR0212: Funciones (I)</a></h3>
+                            <h3><a href="./PR0213.html">PR0213: Funciones (II)</a></h3>
+                            <h3><a href="./PR0214.html">PR0214: Funciones (III)</a></h3>
+                            <h3><a href="./PR0215.html">PR0215: Funciones (IV)</a></h3>
+                            <h3><a href="./PR0216.html">PR0216: Funciones (V)</a></h3>
+                            <h3><a href="./PR0217.html">PR0217: Funciones (VI)</a></h3>
+                            <h3><a href="./PR0218.html">PR0218: Funciones (VII)</a></h3>
+                            <h3><a href="./PR0219.html">PR0219: Funciones (VIII)</a></h3>
+                            <h3><a href="./PR0220.html">PR0220: Funciones (IX)</a></h3>
+                            <h3><a href="./PR0221.html">PR0221: Funciones (X)</a></h3>
+                        </ul>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
+

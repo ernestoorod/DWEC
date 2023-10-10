@@ -3,48 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practica_UT03</title>
+    <title>DWEC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://blog.interfell.com/hubfs/JavaScript%20un%20lenguaje%20de%20programaci%C3%B3n.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo con transparencia */
+        }
+
+        td {
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        table#Lista_de_practicas {
+            background-color: rgba(78, 78, 78, 0.8);
+        }
+
+        table#Lista_de_ejercicios {
+            background-color: rgba(88, 88, 88, 1);
+            height: 100%;
+        }
+
+        #practicas-container {
+            text-align: center;
+        }
+
+        #practicas-container a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+        }
+
+        #practicas-container a:hover {
+            text-decoration: underline;
+        }
+
+        #lista-ejercicios-container {
+            text-align: center;
+            position: absolute;
+            top: 0; /* Alinear en la parte superior de la página */
+            width: 100%;
+        }
+
+        h2 {
+            text-decoration: underline;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>UT03. Objetos y tipos de datos</h1>
-    <h2>Objetos</h2>
-    <ul>
-        <h3><li><a href="./PR0301.html">PR0301: Objetos (I)</a></li></h3>
-        <h3><li><a href="./PR0302.html">PR0302: Objetos (II)</a></li></h3>
-        <h3><li><a href="./PR0303.html">PR0303: Objetos (III)</a></li></h3>
-        <h3><li><a href="">PR0304: Objetos (IV)</a></li></h3>
-        <h3><li><a href="">PR0305: Objetos (V)</a></li></h3>
-    </ul>
-    <h2>Numeros</h2>
-    <ul>
-        <h3><li><a href="">PR0306: Números (I)</a></li></h3>
-    </ul>
-    <h2>Cadenas</h2>
-    <ul>
-        <h3><li><a href="">PR0307: Cadenas (I)</a></li></h3>
-        <h3><li><a href="">PR0308: Cadenas (II)</a></li></h3>
-        <h3><li><a href="">PR0309: Cadenas (III)</a></li></h3>
-        <h3><li><a href="">PR0310: Cadenas (IV)</a></li></h3>
-        <h3><li><a href="">PR0311: Cadenas (V)</a></li></h3>
-    </ul>
-    <h2>Arrays</h2>
-    <ul>
-        <h3><li><a href="">PR0315: Arrays (I)</a></li></h3>
-        <h3><li><a href="">PR0316: Arrays (II)</a></li></h3>
-        <h3><li><a href="">PR0317: Arrays (II)</a></li></h3>
-        <h3><li><a href="">PR0318: Arrays (IV)</a></li></h3>
-        <h3><li><a href="">PR0319: Arrays (V)</a></li></h3>
-        <h3><li><a href="">PR0320: Arrays (VI)</a></li></h3>
-    </ul>
-    <h2>Arrays de objetos</h2>
-    <ul>
-        <h3><li><a href="">PR0324: Arrays de objetos (I)</a></li></h3>
-        <h3><li><a href="">PR0324: Arrays de objetos (II)</a></li></h3>
-        <h3><li><a href="">PR0324: Arrays de objetos (III)</a></li></h3>
-        <h3><li><a href="">PR0324: Arrays de objetos (IV)</a></li></h3>
-        <h3><li><a href="">PR0324: Arrays de objetos (V)</a></li></h3>
-        <h3><li><a href="">PR0324: Arrays de objetos (VI)</a></li></h3>
-        <h3><li><a href="">PR0324: Arrays de objetos (VII)</a></li></h3>
-    </ul>
+    <table id="Lista_de_practicas">
+        <tr>
+            <td>
+                <h1>Lista de prácticas:</h1>
+                <div id="practicas-container">
+                    <a href="../Practica_UT01/UT01.html">Práctica 1</a>
+                    <a href="../Practica_UT02/UT02.html">Práctica 2</a>
+                    <a href="../Practica_UT03/UT03.html">Práctica 3</a>
+                    <a href="">Práctica 4</a>
+                    <a href="">Práctica 5</a>
+                    <a href="">Práctica 6</a>
+                    <a href="">Práctica 7</a>
+                    <a href="">Práctica 8</a>
+                    <a href="">Práctica 9</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table id="Lista_de_ejercicios">
+        <tr>
+            <td>
+                <h1>UT03. Objetos y tipos de datos</h1>
+                    <h2>Objetos</h2>
+                        <ul>
+                            <h3><a href="./PR0301.html">PR0301: Objetos (I)</a></h3>
+                            <h3><a href="./PR0302.html">PR0302: Objetos (II)</a></h3>
+                            <h3><a href="./PR0303.html">PR0303: Objetos (III)</a></h3>
+                            <h3><a href="">PR0304: Objetos (IV)</a></h3>
+                            <h3><a href="">PR0305: Objetos (V)</a></h3>
+                        </ul>
+                    <h2>Numeros</h2>
+                        <ul>
+                            <h3><a href="">PR0306: Números (I)</a></h3>
+                        </ul>
+                    <h2>Cadenas</h2>
+                        <ul>
+                            <h3><a href="">PR0307: Cadenas (I)</a></h3>
+                            <h3><a href="">PR0308: Cadenas (II)</a></h3>
+                            <h3><a href="">PR0309: Cadenas (III)</a></h3>
+                            <h3><a href="">PR0310: Cadenas (IV)</a></h3>
+                            <h3><a href="">PR0311: Cadenas (V)</a></h3>
+                        </ul>
+                    <h2>Arrays</h2>
+                        <ul>
+                            <h3><a href="">PR0315: Arrays (I)</a></h3>
+                            <h3><a href="">PR0316: Arrays (II)</a></h3>
+                            <h3><a href="">PR0317: Arrays (II)</a></h3>
+                            <h3><a href="">PR0318: Arrays (IV)</a></h3>
+                            <h3><a href="">PR0319: Arrays (V)</a></h3>
+                            <h3><a href="">PR0320: Arrays (VI)</a></h3>
+                        </ul>
+                    <h2>Arrays de objetos</h2>
+                        <ul>
+                            <h3><a href="">PR0324: Arrays de objetos (I)</a></h3>
+                            <h3><a href="">PR0324: Arrays de objetos (II)</a></h3>
+                            <h3><a href="">PR0324: Arrays de objetos (III)</a></h3>
+                            <h3><a href="">PR0324: Arrays de objetos (IV)</a></h3>
+                            <h3><a href="">PR0324: Arrays de objetos (V)</a></h3>
+                            <h3><a href="">PR0324: Arrays de objetos (VI)</a></h3>
+                            <h3><a href="">PR0324: Arrays de objetos (VII)</a></h3>
+                        </ul>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
+
