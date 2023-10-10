@@ -13,5 +13,5 @@ function isPrime(n){
 if(primo==true){
     action("true");
 }else{
-    actiom("false");
+    action("false");
 }
