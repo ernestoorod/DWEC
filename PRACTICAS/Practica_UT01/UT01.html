@@ -7,45 +7,46 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: url('https://blog.interfell.com/hubfs/JavaScript%20un%20lenguaje%20de%20programaci%C3%B3n.jpg') no-repeat center center fixed;
+            background: url('https://www.thoughtco.com/thmb/094YF3bQBiuV_13n92GFQZWkM7k=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/JavaScript-58acbb8a3df78c345bad32c2.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #fff;
             margin: 0;
             padding: 0;
+            height: 100vh;
         }
-
+    
         h1 {
             text-align: center;
             margin: 30px 0;
         }
-
+    
         table {
             width: 100%;
             border-collapse: collapse;
-            background-color: rgba(0, 0, 0, 0.7); /* Fondo con transparencia */
         }
-
+    
         td {
             text-align: center;
         }
-
+    
         a {
             text-decoration: none;
             color: #fff;
         }
-
+    
         a:hover {
             text-decoration: underline;
         }
-
+    
         table#Lista_de_practicas {
             background-color: rgba(78, 78, 78, 0.8);
+            
         }
-
+    
         table#Lista_de_ejercicios {
-            background-color: rgba(88, 88, 88, 1);
+            background-color: rgba(88, 88, 88, 1); 
         }
-
+    
         #practicas-container {
             text-align: center;
         }
@@ -59,10 +60,27 @@
         #practicas-container a:hover {
             text-decoration: underline;
         }
-
+    
         h2 {
             text-decoration: underline;
         }
+
+        #a{
+            margin-top: -40px;
+        }
+
+        .cuadrado {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(88, 88, 88, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: top;
+            align-items: center;
+            text-align: center;
+            margin-top: -16px;
+        }
+
     </style>
 </head>
 <body>
@@ -71,35 +89,36 @@
             <td>
                 <h1>Lista de prácticas:</h1>
                 <div id="practicas-container">
-                    <a href="../Practica_UT01/UT01.html">Práctica 1</a>
-                    <a href="../Practica_UT02/UT02.html">Práctica 2</a>
-                    <a href="../Practica_UT03/UT03.html">Práctica 3</a>
-                    <a href="./PRACTICAS/Practica_UT04">Práctica 4</a>
-                    <a href="./PRACTICAS/Practica_UT05">Práctica 5</a>
-                    <a href="./PRACTICAS/Practica_UT06">Práctica 6</a>
-                    <a href="./PRACTICAS/Practica_UT07">Práctica 7</a>
-                    <a href="./PRACTICAS/Practica_UT08">Práctica 8</a>
-                    <a href="./PRACTICAS/Practica_UT09">Práctica 9</a>
+                    <p>
+                        <a href="../Practica_UT01/UT01.html">Práctica 1</a>
+                        <a href="../Practica_UT02/UT02.html">Práctica 2</a>
+                        <a href="../Practica_UT03/UT03.html">Práctica 3</a>
+                        <a href="">Práctica 4</a>
+                        <a href="">Práctica 5</a>
+                        <a href="">Práctica 6</a>
+                        <a href="">Práctica 7</a>
+                        <a href="">Práctica 8</a>
+                        <a href="">Práctica 9</a>
+                        <a href="../../index.html">Volver</a>
+                    </p>
                 </div>
             </td>
         </tr>
     </table>
-    <div id="practicas-container">
-        <table id="Lista_de_ejercicios">
-            <tr>
-                <td>
-                    <h1>UT01: Introducción a JavaScript</h1>
-                    <ul>
-                        <h3><a href="">PR0101: Preparación del entorno</a></h3>
-                        <h3><a href="">PR0102. Git y GitHub Pages</a></h3>
-                    </ul>
-                </td>
-            </tr>
-        </table>
-    </div>
+    <table id="Lista_de_ejercicios">
+        <tr>    
+            <div class="cuadrado">
+                <h1>UT01: Introducción a JavaScript</h1>
+                <h3><a href="">PR0101: Preparación del entorno</a></h3>    
+                <h3><a href="">PR0102. Git and GitHub Pages</a></h3>  
+            </div>
+        </tr>
+    </table>  
 </body>
 </html>
 
 
 
 
+
+            
