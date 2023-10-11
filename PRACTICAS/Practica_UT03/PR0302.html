@@ -4,8 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgba(0, 0, 0, 0.3);
+            background: url('https://midu.dev/images/wallpapers/javascript-small-horizontal-4k.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo con transparencia */
+        }
+
+        td {
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        table#Lista_de_practicas {
+            background-color: rgba(78, 78, 78, 0.8); /* Fondo gris oscuro con transparencia */
+        }
+
+        table#Lista_de_ejercicios {
+            background-color: rgba(88, 88, 88, 1); /* Fondo gris claro con transparencia */
+        }
+
+        #practicas-container {
+            text-align: center;
+        }
+
+        #practicas-container a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+        }
+
+        #practicas-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
+    <table id="Lista_de_practicas">
+        <tr>
+            <td>
+                <h1>Lista de prácticas:</h1>
+                <div id="practicas-container">
+                    <a href="../Practica_UT03/PR0301.html">PR0301</a>
+                    <a href="../Practica_UT03/PR0302.html">PR0302</a>
+                    <a href="../Practica_UT03/PR0303.html">PR0303</a>
+                </div>    
+            </td>
+        </tr>
+    </table>
     <script src="./JS/PR0302.js"></script>
 </body>
 </html>
