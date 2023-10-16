@@ -7,10 +7,10 @@ function removeUndefined(obj) {
   }
 
   const objeto = {
-    nombre: 'John',
-    edad: 30,
-    ciudad: undefined,
-    trabajo: 'Desarrollador'
+    nombre: 'Ernesto',
+    edad: 21,
+    ciudad: 'Leon',
+    trabajo: undefined
   };
   
   removeUndefined(objeto);
