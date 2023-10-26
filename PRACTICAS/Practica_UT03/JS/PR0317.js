@@ -5,7 +5,7 @@ function generateUsername(arr) {
     });
   }
   
-  // Ejemplo
+
   let arr = [
     { name: 'Victor', surname: 'González' },
     { name: 'Pepe', surname: 'Pérez' }
