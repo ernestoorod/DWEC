@@ -1,0 +1,69 @@
+SINTAXIS BASICA
+
+VARIABLES Y TIPOS DE DATOS
+variables - let *ejemplo: let nombre = Ernesto* 
+constantes - const *ejemplo: const ip = 10.0.0.5*
+diferencias entre variables y constantes, es que las variables se pueden modificar y  pueden variar y las constantes son de valor fijo y no se puede modificar.
+tambien esta el comando "var" que es otra forma de declarar una variable pero es obsoleta y no se debe usar nunca.
+Tipos de datos: Number, Biglnt, String, Boolean, Null, Undefined, Object y Symbol
+
+INTERACCION CON EL USUARIO
+alert- muestra una ventana modal que muestra un mensaje y espera a que el usuario le de a OK.
+prompt- muestra una ventana en la que solicita un mensaje y despues espera a que el usuario le de a OK
+confirm- ventana modal que tiene dos respuestas si respondes OK es true y si respondes cancelar es false.
+console.log - imprime el texto en la consola como un mensaje de registro
+
+OPERADORES BASICOS Y COMPARADORES
+operadores unarios - un unico operando
+operadores binarios - dos operandos
+suma(+), resta(-), multiplicacion(*), division(/), resto(%), exponenciacion(**)
+== - si es igual
+=== - si igual hasta en el tipo
+AND(&), OR(|), XOR(^), NOT(~), LEFT SHIFT(<<), RIFGHT SHIFT(>>), ZERO-FILL RIGHT SHIFT(>>>)
+
+EJECUCION CONDICIONAL
+if...else, si es cierto(if) que haga x, si no(else) que haga x.
+? - operador ternario *ejemplo: let notas = (nota>=5) ?(if) 'Aprobado':(else) 'Suspenso'*
+?? - permite realizar evaluaciones condicionales *ejemplo: let user; console.log(user ?? 'Invitado')* en otras palabras si user esta definida se muestra user, sino(else) invitado.
+
+BUCLES
+while, do..while, for
+while- *ejemplo: let e=0; while(e<5){console.log(e); e++} //Devolvera 0,1,2,3,4*
+do..while- el while funciona igual que como ay hemos explicado anteriormente pero le añade do, que lo que hace es que el bucle while solo se hace si la condicion es verdadera.
+for- los bucles for tienen tres partes for(comienzo,condicion,paso)
+comienzo: se utiliza para indicar las variables
+condicion: mientras sea veradera se ejecuta el bucle
+paso: se ejecutas despues de cada iteracion
+comando break para finalizar un bucle
+comando continue no finaliza pero sigue a la siguiente iteracion
+
+SETENCIA SWITCH
+La setencia switch permite evaluar una expresion y ejecutar diferentes bloques de codigo segun el valor de la misma.
+*Ejemplo:
+switch (exp) {
+case 'valor1':
+// Se ejecuta si exp===valor1
+break
+case 'valor2':
+// Se ejecuta si exp===valor2
+break
+default:
+// Se ejecuta si no se cumple ninguna de las
+//condiciones anteriores
+}*
+
+FUNCIONES
+*Ejemplo 1:
+function showMessage() {
+alert('Hola mundo!');
+}
+showMessage();*
+*Ejemplo 2:
+function showMessage( msg, userName) {
+alert(`${msg}, ${userName}`);
+}
+showMessage( 'Hola', 'Victor' );*
+Si al invocar una funcion no se le pasa un parametro se le asigna el valor undefined.
+Las funciones siempre devuelven un valor que se indica con la setencia return, si no hay return saldra undefined
+funciones flecha - *ejemplo: let funcion = (arg1, arg2) => expresion;*
+La funcion recoger los parametros indicados y devuelve el resultado de la expresion.
