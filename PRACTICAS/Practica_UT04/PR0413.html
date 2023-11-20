@@ -16,17 +16,14 @@ body {
 }
 
 #form {
-    background-color:  #E6E6EA;
+    background-color: #E6E6EA;
     width: 600px;
-    height: 200;
+    height: 200px;
     margin: auto;
     margin-top: 50px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     box-shadow: 3px 3px 5px #454545;
-}
-
-#form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -83,16 +80,40 @@ body {
     height: 40px;
     display: flex;
     align-items: center;
-    padding-left: 15px;
+    padding: 0 15px; /* Espaciado a la izquierda y derecha */
     background-color: white;
     color: #16448D;
     border: 1px solid #ddd;
     border-radius: 3px;
     margin-top: 3px;
+    position: relative; /* Necesario para posicionar correctamente los elementos internos */
 }
 
 #todos li:hover {
     background-color: #f3f3f3;
+}
+
+#todos .btn {
+    cursor: pointer;
+    background-color: #6F0E18;
+    color: white;
+    border-radius: 3px;
+    width: 60px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Posicionamiento absoluto para situar a la izquierda y derecha */
+    top: 50%; /* Centrar verticalmente */
+    transform: translateY(-50%);
+}
+
+#todos .btn:hover {
+    background-color: #961B1E;
+}
+
+#todos .task-text {
+    flex-grow: 1; /* Para ocupar el espacio restante y centrar el texto */
 }
 
 #todos .todo {
@@ -100,24 +121,11 @@ body {
     justify-content: space-between;
 }
 
-#todos .btn {
-    cursor: pointer;
-    background-color: #6F0E18;
-
-    color: white;
-    border-radius: 3px;
-    margin-right: 10px;
-    width: 60px;
-    height: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.todo.completed {
+    text-decoration: line-through;
+    background-color: greenyellow;
 }
-
-#todos .btn:hover {
-    background-color: #961B1E;
-}
-    
+   
     </style>
 </head>
 <body>
@@ -136,6 +144,6 @@ body {
             </ul>
         </div>
     </div>
-    <script src="./JS/PR0412.js"></script>
+    <script src="./JS/PR0413.js"></script>
 </body>
 </html>

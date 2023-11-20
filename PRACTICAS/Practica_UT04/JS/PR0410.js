@@ -1,25 +1,34 @@
-let texto = document.getElementById('input-text');
-let boton = document.getElementById('add-button');
-let lista = [];
+let totalmils = 0;
+let secs = 0;
+let mins = 0;
+let mils = 0;
 
-function listas() {
-    let ul = document.querySelector('#todos ul');
-    
-    for (let k = 0; k < lista.length; k++) {
-        ul.innerHTML += `<li>${lista[k]}</li>`;
-    }
-}
+function updateTime(){
+    totalmils += 100;
+    let mils = (totalmils % 1000).toFixed(0).padStart(2, '0');
+    let secs = ((totalmils/1000) % 60).toFixed(0).padStart(2, '0');
+    let mins = ((totalmils/1000) /60).toFixed(0).padStart(2, '0');
 
-function cuadro(){
-    let tarea = texto.value;
-    lista.push(tarea);
-    listas();
-}
+    document.getElementById('mils').textContent = mils;
+    document.getElementById('secs').textContent = secs;
+    document.getElementById('mins').textContent = mins; 
+};
 
-boton.addEventListener("click", cuadro);
+document
+.getElementById('start')
+.addEventListener('click', e =>{
+    interval = setInterval(updateTime,45);
+});
 
+document
+.getElementById('stop')
+.addEventListener('click', e =>{
+    clearInterval(interval);
+});
 
-
-
-
-
+document
+.getElementById('reset')
+.addEventListener('click', e =>{
+    totalmils = 0;
+});
+   

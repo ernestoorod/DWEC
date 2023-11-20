@@ -2,117 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="#">
-    <link rel="stylesheet" href="style.css">
-    <title>TODO List</title>
+    <title>Document</title>
     <style>
+        *{
+            text-align: center;
+        }
 
-    body {
-        background-color: #2AB7CA;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        box-sizing: border-box;
-    }
+        body{
+            background-color: beige;
+            margin: 0 auto;
+        }
 
-    #form {
-        background-color:  #E6E6EA;
-        width: 600px;
-        height: 200;
-        margin: auto;
-        margin-top: 50px;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        box-shadow: 3px 3px 5px #454545;
-    }
+        button{
+            justify-content: center;
+            width: 100px;
+            height: 50px;
+        }
 
-    #form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+        #start{
+            background-color: green;
+        }
 
-    #form #input-label {
-        padding: 5px;
-        font-size: 1.5em;
-        color: #313131;
-    }
+        #stop{
+            background-color: red;
+        }
 
-    #form #input-text {
-        width: 350px;
-        height: 40px;
-        border: 2px solid #999;
-        border-radius: 3px;
-        font-size: 1.4em;
-        padding-left: 10px;
-    }
+        #reset{
+            background-color: orange;
+        }
 
-    #form div {
-        padding-bottom: 35px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-    
-    #form #add-button {
-        margin-left: 15px;
-        width: 100px;
-        height: 45px;
-        font-size: 1.1em;
-    }
-    
-    #todos {
-        width: 600px;
-        margin: auto;  
-        background-color: #F4F4F8;
-        box-shadow: 3px 3px 5px #454545;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-    }
-    
-    #todos ul {
-        padding-left: 0;
-        margin: 20px;
-        margin-top: 0;
-        padding-top: 12px;
-        padding-bottom: 25px;
-    }
-    
-    #todos li {
-        list-style: none;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        padding-left: 15px;
-        background-color: white;
-        color: #16448D;
-        border: 1px solid #ddd;
-        border-radius: 3px;
-        margin-top: 3px;
-    }
-    
-    #todos li:hover {
-        background-color: #f3f3f3;
-    }
-    
     </style>
 </head>
 <body>
-    <div id="app">
-        <div id="form">
-            <p id="input-label">Introduce una tarea</p>
-            <div>
-                <input type="text" id="input-text">
-                <button id="add-button">Agregar</button>
-            </div>
-        </div>
-
-        <div id="todos">
-            <ul>
-
-            </ul>
-        </div>
+    <h1>Cronometro</h1>
+ 
+    <div>
+        <span id="mins">00</span>:<span id="secs">00</span>.<span id="mils">00</span>
     </div>
+    <div>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+    </div>
+
     <script src="./JS/PR0410.js"></script>
+
 </body>
 </html>
+

@@ -1,35 +1,53 @@
-SINTAXIS BASICA
-
 VARIABLES Y TIPOS DE DATOS
-variables - let *ejemplo: let nombre = Ernesto* 
+---------------------------
+variables - let *ejemplo: let nombre = Ernesto*
+ 
 constantes - const *ejemplo: const ip = 10.0.0.5*
+
 diferencias entre variables y constantes, es que las variables se pueden modificar y  pueden variar y las constantes son de valor fijo y no se puede modificar.
+
 tambien esta el comando "var" que es otra forma de declarar una variable pero es obsoleta y no se debe usar nunca.
+
 Tipos de datos: Number, Biglnt, String, Boolean, Null, Undefined, Object y Symbol
 
 INTERACCION CON EL USUARIO
+---------------------------
 alert- muestra una ventana modal que muestra un mensaje y espera a que el usuario le de a OK.
+
 prompt- muestra una ventana en la que solicita un mensaje y despues espera a que el usuario le de a OK
+
 confirm- ventana modal que tiene dos respuestas si respondes OK es true y si respondes cancelar es false.
+
 console.log - imprime el texto en la consola como un mensaje de registro
 
 OPERADORES BASICOS Y COMPARADORES
+----------------------------------
 operadores unarios - un unico operando
 operadores binarios - dos operandos
+
 suma(+), resta(-), multiplicacion(*), division(/), resto(%), exponenciacion(**)
+
 == - si es igual
 === - si igual hasta en el tipo
+
 AND(&), OR(|), XOR(^), NOT(~), LEFT SHIFT(<<), RIFGHT SHIFT(>>), ZERO-FILL RIGHT SHIFT(>>>)
 
 EJECUCION CONDICIONAL
+----------------------
 if...else, si es cierto(if) que haga x, si no(else) que haga x.
+
 ? - operador ternario *ejemplo: let notas = (nota>=5) ?(if) 'Aprobado':(else) 'Suspenso'*
+
 ?? - permite realizar evaluaciones condicionales *ejemplo: let user; console.log(user ?? 'Invitado')* en otras palabras si user esta definida se muestra user, sino(else) invitado.
 
 BUCLES
+-------
 while, do..while, for
+
 while- *ejemplo: let e=0; while(e<5){console.log(e); e++} //Devolvera 0,1,2,3,4*
+
 do..while- el while funciona igual que como ay hemos explicado anteriormente pero le añade do, que lo que hace es que el bucle while solo se hace si la condicion es verdadera.
+
 for- los bucles for tienen tres partes for(comienzo,condicion,paso)
 comienzo: se utiliza para indicar las variables
 condicion: mientras sea veradera se ejecuta el bucle
@@ -38,6 +56,7 @@ comando break para finalizar un bucle
 comando continue no finaliza pero sigue a la siguiente iteracion
 
 SETENCIA SWITCH
+----------------
 La setencia switch permite evaluar una expresion y ejecutar diferentes bloques de codigo segun el valor de la misma.
 *Ejemplo:
 switch (exp) {
@@ -47,23 +66,404 @@ break
 case 'valor2':
 // Se ejecuta si exp===valor2
 break
-default:
+default:i
 // Se ejecuta si no se cumple ninguna de las
 //condiciones anteriores
 }*
 
 FUNCIONES
+-----------
 *Ejemplo 1:
 function showMessage() {
 alert('Hola mundo!');
 }
 showMessage();*
+
 *Ejemplo 2:
 function showMessage( msg, userName) {
 alert(`${msg}, ${userName}`);
 }
 showMessage( 'Hola', 'Victor' );*
+
 Si al invocar una funcion no se le pasa un parametro se le asigna el valor undefined.
 Las funciones siempre devuelven un valor que se indica con la setencia return, si no hay return saldra undefined
+
 funciones flecha - *ejemplo: let funcion = (arg1, arg2) => expresion;*
 La funcion recoger los parametros indicados y devuelve el resultado de la expresion.
+
+OBJETOS EN JAVASCRIPT
+----------------------
+Los objetos en javasrcipt se muestran de la siguiente manera: 
+* let user = {
+    name : "Ernesto",
+    age : 21,
+}; *
+
+corchetes en las funciones:
+- para hacer referencia a propiedades compuestas por mas de una palabra.
+- cuando el nombre de la propiedad se genera a partir de una expresion
+- para propiedades calculadas
+
+con el operador "in" se puede comprobar si un objeto tiene determinada propiedad.
+Iterando en objetos, el operador de asignacion en objetos no copia el objeto, si no que hace que la nueva variable apunte al mismo objeto
+
+Clonacion de objetos:
+- crear una funcion personalizada
+- utilizar la funcion object.assign()
+- utilizar el operador spread
+
+OPERADORES THIS Y NEW
+----------------------
+Los objetos que hemos visto tienen propiedades, pero tambien pueden tener metodos.
+Lo normal es que los metodos hagan referencia a las propiedades del objeto y aqui utilizamos la palabra this.
+
+ENCADENAMIENTO OPCIONAL
+------------------------
+Es una forma de prevenir errores al acceder a propiedades anidadas de objetos
+La solucion es el encadenamiento opcional "?." que devuelve undefined si el valor antes del "?." es undefined o null.
+
+TIPOS DE DATOS PRIMITIVOS:NUMEROS
+-----------------------------------
+Metodo "toString()" permite convertir un numeo a cadena en la base indicada como parametro.
+
+Hay 4 funciones de redondeo en JS:
+- Math.floor
+- Math.ceil
+- Math.round
+- Math.trunc 
+
+Si queremos redondear el numero a n digitos debemos utilizar el metodo "toFixed(n)"
+En caso de tener problemas con los numeros podemos utilizar parseInt() o parseFloat() que convierten la cadena en numeros.
+
+Otras funciones matemaricas:
+- Math.random() : devuelve un numero aleatorio entre 1 y 0
+- Math.max(a,b,c,..) : devuelve el mayor
+- Math.min(a,b,c,..) : devuelve el menor
+- Math.pow(n,k) : devuelve n elevado a la potencia k
+
+TIPOS DE DATOS PRIMITIVOS:STRINGS
+----------------------------------
+Cadenas, en una cadena podemos incorporar cualquier caracter existente
+Podemos conocer la longitud de una cadena con la propiedad length
+toLowerCase - todo minusculas
+toUpperCase - todo mayusculas
+
+str.indexOf(substr, pos) - busca la primera aparicion de substr en la cadena str comenzando en la posicion pos. Si no encuentra devuelve -1
+
+str.includes(substr, pos) - Devuelve true/false en función de si la cadena str incluye la
+subcadena substr a partir de la posición pos.
+
+str.startsWith( substr) y str.endsWith( substr) - Devuelve true/false en función de si la cadena str comienza o finaliza por substr.
+
+str.slice(comienzo, [final]) - Devuelve la subcadena desde comienzo hasta final.
+
+str.substring(comienzo, [final]) - Devuelve la subcadena desde comienzo hasta final (excluido
+este último). Permite que comience sea mayor que final. No soporta números negativos (son tratados como 0)
+
+str.substr(comienzo, [largo]) - En este caso se indica la longitud de la subcadena en lugar de la posicion final. Permite que comienzo sea negativo.
+Como son equivalentes se aconseja utilizar únicamente uno de ellos. Lo más recomendable es utilizar slice()
+
+str.padEnd( targetLength, [padStr, …] ) - Rellena la cadena hasta alcanzar la longitud determinada con la
+subcadena que se le indique. Hay otra funcion equivalente llamada padStart()
+
+str.repeat(length) - Repite la cadena el numero de veces indicado.
+
+str.replace(searchFor, replaceWith) - Reemplaza por la primera ocurrencia de searchFor por replaceWith. La función replaceAll() reemplaza todas las ocurrencias.
+
+str.split([separador,[limite]]) - Convierte una cadena en array utilizando el separador indicado
+como para escoger donde empieza y acaba cada elemento.
+
+str.trim() - Elimina los caracteres en blanco que haya al principio y al final de la cadena.
+
+ARRAYS
+-------
+Un array es una coleccion ordenada de elementos, se representan entre corchetes, separado con comas.
+Podemos obtener la longitud del array mediante la propiedad length
+
+Los elementos del array pueden ser de cualquier tipo y no tienen por qué ser todos del mismo tipo
+Alternativamente, podemos acceder a los elementos del array con la función at(), que tiene la ventaja de permitir índices negativos.
+
+Hay 4 metodos de inserccion y extraccion de datos de un array:
+- push()
+- pop()
+- shift()
+- unshift()
+
+Es posible iterar sobre los elementos de un array mediante sus índices en un bucle for. Tambien se puede con for..of
+
+Los arrays tienen su propio método toString que devuelve todos sus elementos separados por coma.
+Al igual que pasaba con los objetos, no se pueden comparar arrays con el operador == ya que solo da positivo si ambos referencian el mismo array.
+
+METODOS DE ARRAYS
+-------------------
+Metodo splice - arr.splice( start[, deleteCount[, item1, item2, …]] ), El método splice() sirve para realizar varias operaciones con arrays: insertar, eliminar y reemplazar elementos. Comenzando en start, elimina el número de elementos indicados en deleteCount e inserta los elementos item1, item2,...
+El método splice() modifica directamente el array, pero si recogemos los datos que devuelve veremos que devuelve un array con los elementos eliminados.
+
+Metodo slice - arr.slice([principio],[final]), El metodo slice devuelve un nuevo array copiando en el todos los elementos desde principio hasta final(no incluido)
+"arr.concat(arg1, arg2, ...)" - Los argumentos pueden ser tanto arrays como valores. Devuelve un nuevo array que está formado por la concatenación del array con todos los arrays y valores que se le pasen como parámetro.
+
+Metodo foreach - permite ejecutar una funcion para cada elemento del array, esta funcion debera tomar tres parametros:
+- item
+- index
+- array
+Tambien se pueden utilizar funciones flecha.
+arr.indexOf( item, from ) y arr.includes( item, from ), similares a las funciones homónimas con cadenas. indexOf() devuelve la posición de un objeto y -1 en caso de no
+encontrarlo. includes() devuelve true si el array incluye el elemento
+buscado.
+
+Metodo some - el metodo some(func) recibe como parametro una funcion que se ejecutara para cada uno de los elementos del array.
+
+Metodo every - el metodo every(func) devuelve true se la funcion pasada devuelve true en todos los elementos del array.
+
+Metodo find y findIndex - util cuando queremos buscar elementos que cumplan una condición determinada.
+Aplica la función a cada elemento y devuelve el primer elemento (o su índice) cuyo valor devuelto por la función sea true.
+
+Metodo filter - arr.filter(func), similar a find(), pero en lugar de devolver el primer elemento
+que cumple la condición devuelve un array con todos los elementos que la cumplen
+
+Metodo map - arr.map(func), este método permite transformar un array aplicando una función sobre cada uno de los miembros del mismo. Esta función recoge los mismos argumentos que en los ejemplos anteriores.
+
+Metodo sort - arr.sort(func), Este método sirve para ordenar el array. Al contrario que map(), sí que modifica el array original. Si queremos que ordene números (o utilizar cualquier otro
+criterio) debemos pasar nuestra propia función de ordenación.
+La función recibe 2 parámetros a y b, que son los dos
+elementos que se compararán en cada una de las iteraciones del algoritmo de ordenación, y debe devolver:
+• 1 si a>b
+• 0 si a=b
+• -1 si a<b
+En realidad, es suficiente con que devuelva positivo (a>b) o negativo (a<b)f
+
+Metodo reverse - arr.reverse(), invierte el orden del array, de forma que el primer elemento pasa a ser el último y viceversa.
+
+Metodo split y join - str.split( delim, len ) y arr.join( delim ), estos métodos sirven para descomponer una cadena en partes que se almacenan en un array (split) y al revés, para combinar los elementos de un array en una cadena (join). Al split se le pasa la cadena delimitadora y, opcionalmente, el número de elementos que extraerá
+
+Metodo reduce - el método reduce( func ) sirve para iterar sobre los elementos de un array y realizar una operación sobre todos ellos para finalmente devolver un único valor. Observa que la función que se le pasa tiene los parámetros que hemos visto en otras funciones, pero también un parámetro acumulador.
+
+Metodo isArray - dado que los arrays son objetos, el operador typeof no nos servirá para identificarlos, ya que simplemente nos dirá con son objetos.
+Para saber si una variable contiene un array debemos utilizar el método Array.isArray().
+
+DESESTRUCTURACION
+------------------
+La asignacion desustructurante es una sintaxis especial de JS que permite desempaquetar array y objetos en varias variables
+
+INTRODUCCION AL DOM
+--------------------
+El objeto raíz se llama window y tiene dos roles:
+- Es el objeto golbal para el codigo JS
+- Representa a la ventana del navegador y proporciona metodos para controlarla.
+El DOM represanto todo el contenido de la pagina como objetos que pueden ser modificados
+
+RECORRIENDO EL DOM
+-------------------
+document.documentElement - es el nodo superior del documento y corresponde a la etiqueta <html>
+document.body - este nodo corresponde a la eqtiqueta <body>
+document.head - este nodo corresponde a la etiqueta <head>
+
+Para recorrer el arbol de nodos disponemos de los siguientes metodos y propiedades:
+- Node.childNodes
+- Node.firstChild
+- Node.lastChild
+- Node.parentNode
+- Node.nextSibling
+- Node.previusSibling
+
+Para acceder direcyamente a un nodo las opciones son:
+- document.getElementById
+- document.getElementsByClassName
+- document.getElementsByName
+- document.getElementsByTagName
+- querySelector
+- querySelectorAll
+
+Node.childNodes, es una propiedad de solo lectura que devuelve una coleccion de hijos de un elemento dado.
+Hay que tener cuidado porque, aunque parece que devuelve un array, realmente es una colección, por lo que los métodos que conocemos para trabajar con arrays no se pueden utilizar directamente.
+Si queremos utilizarlos debemos convertirlo primero a array con Array.from.
+
+Node.firstChild y Node.lastChild, permite un acceso rapido a la primera y a la ultima propiedad hijo de un elemento
+
+Node.parentNode, cada nodo del arbol tiene un unico nodo padre, se puede obtener utilizando la propiedad parentNode
+
+Node.nextSibling y Node.previusSibling, esta propiedad sirve para acceder a los nodos hermanos de un nodo determinado.
+
+document.getElementsById(id) - permite obtener un nodo en funcion de su valor en el atributo de HTML id
+
+document.getElementsByClassName(className) - permite obtener los nodos de arbol que tienen el valor class que indicas.
+
+document.getElementsByName(name) - permite obtener el nodo con el valor del nombre
+
+document.getElementsByTagName(tagName) - permite obtener el nodo con el valor del nombre de la etiqueta HTML
+
+querySelector - permite obtener el nodo conn el valor del primero que cumpla.
+
+querySelectorAll - devuelve una coleccion estatica que refleja siempre el estado del documento en el momento en que se ejecuto el metodo.
+
+ATRIBUTOS Y PROPIEDADES
+------------------------
+EvenTarget: clase abstracta que proporciona soporte para eventos al resto de clases.
+
+Node: otra clase abstracta que proporciona funcionalidad
+básica como las propiedades parentNode, nextSibling, …
+
+Document: contiene el documento completo. El objeto global document corresponde con esta clase.
+
+CharacterData: clase abstracta de la que heredan las clases:
+- Text: los textos que hay dentro de los elementos
+- Comment: comentarios
+
+
+Element: es la clase base para los elementos del DOM. Proporciona métodos de navegación como nextElementSibling o children o de búsqueda como getElementsByTagName o querySelector.
+
+HTMLElement: es la clase base para todos los elementos HTML. De esta clase heredan otras como:
+- HTMLInputElement: para los elementos <input>
+- HTMLBodyElement: para los elementos <body>
+- HTMLAnchorElement: para los elementos <a>
+
+innerHTML: permite obtener el HTML dentro de la etiqueta, esta propiedad es de lectura y escritura, por lo que nos permite modificar el contenido de la pagina.
+
+outerHTML: es como innerHTML, pero añadiendo el elemento en si.
+
+nodeValue/data: para los nodos que no heredan de element disponemos de las propiedades nodeValue y data.
+
+textContent: devuelve unicamente el texto dentro de un elemento sin etiquetas.
+
+hidden: el atributo hidden en HTML indica si un elemento esta visible, por lo que podemos utilizar la propiedad hidden para ocultar un elemento en el DOM
+
+value: esta propiedad pertenece a los elementos <input>, <select> y <textarea> y contiene el valor del mismo.
+
+href: en caso de etiqueta <a> podemos obtener el valor del atributo href con la propiedad del mismo nombre.
+
+id: otro atributo es el id, el cual se puede obtener con la propiedad del mismo nombre. 
+
+MODIFICANDO EL DOCUMENTO: ESTILOS Y CLASES
+-------------------------------------------
+document.createElement(tag) - Crear un nodo elemento HTML especificado por su nombre de etiqueta se pasa como parametro.
+
+document.createTextNode(text) - Crear un nuevo nodo texto con el texto que se le pasa como parametro.
+
+Metodos de insercion:
+- node.append(): agrega nodos al final de node
+- node.prepend(): agrega nodos al principio de node
+- node.before(): agrega nodos antes de node
+- node.after(): agrega nodos después de node
+- node.replaceWith(): reemplaza node con los nodos dados
+ 
+Eliminacion de nodos, para eliminar un nodo disponemos de la funcion node.remove()
+
+Clonando nodos, se puede clonar un nodo con node.cloneNode(deep). El argumento es un boolean que puede ser:
+- true: realiza una clonación profunda, clonando todo el árbol de nodos dentro de node
+- false: únicamente clona el nodo, no sus nodos hijo.
+
+Manipulacion de clases, uno de los casos mas habituales de manipulacio del DOM es para aplicar estilos de forma dinamica. Hay dos formas de hacer esto: 
+- Crear clases css y agregarlas con JS.
+- Escribir las propiedades directamente en style.
+
+La propiedad que corresponde al atributo class es elem.className.
+
+El valor de className es una cadena, por lo que puede ser
+complicado añadir o quitar clases.
+Para ello hay otra propiedad llamada elem.classList que
+dispone de una serie de funciones para manipular las clases
+del elemento.
+- elem.classList.add/remove(): agrega o elimina una clase
+- elem.classList.toggle(): agrega la clase si no existe, si no la elimina.
+- elem.classList.contains(): devuelve true si el elemento
+tiene la clase indicada.
+
+La otra posibilidad para aplicar estilos es manipular
+directamente la propiedad elem.style.
+
+Si queremos eliminar una propiedad podemos asignarle la cadena vacia.
+
+Para añadir múltiples propiedades simultáneamente hay que
+usar la propiedad especial style.cssText.
+
+BROWSER OBJECT MODEL
+---------------------
+El BOM permite acceder y modificar las propiedades de las ventanas del propio navegador.
+
+El objeto window, es la raiz del resto de objetos y, ademas proporciona metodos para manipular el tamaño y posicion de la ventana
+- moveBy(x, y): desplaza la ventana la distancia indicada
+- moveTo(x, y): mueve la ventana a las coordenadas indicadas
+- resizeBy(x, y): incrementa o decrementa el tamaño de la
+ventana en los valores indicados por los parámetros.
+- resizeTo(x, y): redimensiona la ventana al tamaño indicado
+
+El objeto document, pertenece tanto al DOM com al BOM y permite acceder a informacion sobre la pagina.
+- lastModified: fecha de la última modificación de la página
+- referrer: URL desde la que se accedió a la página
+- title: texto de la etiqueta <title>
+- URL: la dirección de la página actual del navegador
+
+
+El objeto window también dispone de varios arrays con información relevante de la página:
+- anchors: todas las anclas de la página
+- applets: todos los applets de la página
+- embeds: todos los objetos embebidos mediante la etiqueta
+<embed>
+- forms: todos los formularios de la página
+- images: todas las imágenes de la página
+- links: todos los enlaces
+
+El objeto location
+Representa la URL de la página HTML, con propiedades útiles
+para acceder a la misma:
+- hash: el contenido de la URL que se encuentra a
+continuación del signo # (enlaces de las anclas)
+- host: nombre del servidor
+- hostname: suele coincidir con host
+- href: URL completa de la página actual
+- pathname: todo el texto que hay después del host
+- port: si se especifica en la URL, puerto por el que se ha
+accedido.
+- protocol: texto que hay antes de las dobles barras (//)
+- search: todo lo que se encuentra tras la interrogación, es
+decir, la query string
+Además, proporciona algunos métodos, como:
+- location.assign(url): cambia la URL del navegador
+- location.replace(url): similar al anterior, salvo que se borra la página actual del array history del navegador
+- location.reload(bool): recarga la página. Si el parámetro
+pasado es true se carga la página del navegador mientras
+que si es false lo hace desde la cache
+
+El objeto navigator
+Este objeto incluye información sobre el propio navegador:
+- appCodeName: cadena que representa el nombre del
+navegador
+- appName: nombre oficial del navegador
+- appVersion: versión del navegador
+- browserLanguaje: idioma del navegador
+- cookieEnabled: indica si las cookies están habilitadas
+- platform: plataforma sobre la que se ejecuta el navegador
+- plugins: lista de plugins instalados en el navegador
+
+El objeto screen
+Información sobre la pantalla del usuario:
+- availHeight: altura de la pantalla disponible para las
+ventanas
+- availWidth: ancho de pantalla disponible para las ventanas
+- colorDepth: profundidad de color de la pantalla
+- height: altura total de la pantalla en píxeles
+- width: ancho total de la pantalla en píxeles
+
+CONTROL DE TIEMPOS
+-------------------
+Hay ocasiones en que queremos esperar un tiempo para
+realizar alguna acción o bien programar alguna acción para que se realice periódicamente. Como alternativa, proporciona los métodos setTimeout y setInterval
+
+El método setInterval recibe dos parámetros:
+- El primero es una función que se ejecutará cuando haya
+transcurrido el tiempo especificado.
+- El segundo indicará el tiempo que hay que esperar, medido
+en milisegundos
+
+El método setTimeout ejecuta la función que se le pase como
+primer parámetro una vez transcurrido el tiempo que se
+indique como segundo parámetro (en milisegundos).
+Es decir, la función se ejecuta una única vez.
+
+Hay ocasiones en que hemos programado una tarea con
+setTimeout() y queremos cancelarla antes de que transcurra el
+tiempo indicado. También puede ocurrir que hayamos planificado una tarea para que se ejecute recurrentemente con setInterval() y queremos que deje de hacerlo. Para estas situaciones disponemos de las funciones clearTimeout() y clearInterval().
+
+En ambas funciones necesito hacer referencia al timeout o al
+intervalo que quiero cancelar mediante su identificador.
+El identificador lo devuelve la propia función setInterval() o setTimeout(), por lo que debo guardarlo en alguna variable si posteriormente querré cancelarlo.
