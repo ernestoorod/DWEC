@@ -1,8 +1,13 @@
-let elemento = document.getElementById("numbers");
+function generateNumbers() {
+    let numbersDiv = document.getElementById("numbers");
+    let htmlContent = "";
 
-for (let k = 1; k <= 30; k++) {
-    numeros.innerHTML += `<span>${k}</span>`;    
-    numeros.classList.add("number");
+    for (let i = 1; i <= 30; i++) {
+        htmlContent += `<span class='number'>${i}</span>`;
+    }
+
+    numbersDiv.innerHTML = htmlContent;
 }
 
-console.log(elemento.innerHTML);
+generateNumbers();
+
