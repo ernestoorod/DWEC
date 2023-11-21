@@ -1,79 +1,92 @@
+let ul = document.querySelector('ul');
+let agregar = document.getElementById('add-button');
+let tareas = [];
 let texto = document.getElementById('input-text');
-let boton = document.getElementById('add-button');
-let clearButton = document.getElementById('clear-button');
-let lista = [];
-
-function listas() {
-    let ul = document.querySelector('#todos ul');
-
-    ul.innerHTML = "";
-
-    for (let k = 0; k < lista.length; k++) {
-        let tarea = lista[k];
-
-        let li = document.createElement('li');
-
-        let deleteButton = document.createElement('span');
-            deleteButton.textContent = 'Eliminar';
-            deleteButton.classList.add('btn');
-            deleteButton.addEventListener('click', function() {
-                eliminarTarea(tarea.id);
-        });
-
-        let doneButton = document.createElement('span');
-            doneButton.textContent = tarea.hecha ? 'Desmarcar' : 'X';
-            doneButton.classList.add('btn');
-            doneButton.addEventListener('click', function() {
-                marcarComoHecha(tarea.id);
-        });
-
-
-        if (tarea.hecha) {
-            ul.classList.add('completed');
-        }
-
-        
-        li.appendChild(doneButton);
-        li.appendChild(document.createTextNode(tarea.texto));
-        li.appendChild(deleteButton);
-        ul.appendChild(li);
+ 
+let borrarLista  = document.querySelector('#borrar-abajo button');
+ 
+agregar.addEventListener('click', ()=>{
+    if (texto.value != "") {
+        let id = generarId();
+        let tarea ={
+            idObjeto : id,
+            contenido : texto.value,
+            hecho : "false"
+        };
+        tareas.push(tarea);
+        generarHtml(tareas);
+        texto.value = "";
+    }else{
+        alert("No puedes añadir campos vacios");
     }
-}
-
-function cuadro() {
-    let tarea = {
-        id: generarId(),
-        texto: texto.value,
-        hecha: false
-    };
-
-    lista.push(tarea);
-    listas();
-}
-
-function eliminarTarea(id) {
-    lista = lista.filter(tarea => tarea.id !== id);
-    listas();
-}
-
-function marcarComoHecha(id) {
-    lista = lista.map(tarea => {
-        if (tarea.id === id) {
-            tarea.hecha = !tarea.hecha;
-        }
-        return tarea;
-    });
-
-    listas();
-}
-
-function generarId() {
-    return Math.floor(Math.random() * Math.pow(36, 8)).toString(36).padStart(4, '0');
-}
-
-boton.addEventListener("click", cuadro);
-
-clearButton.addEventListener('click', function() {
-    lista = [];
-    listas();
+   
+   
 });
+ 
+ 
+function cargarBotones() {
+    let borrar = document.querySelectorAll("span.btn");
+    borrar.forEach(botonBorrar =>{
+        botonBorrar.addEventListener('click', (boton)=>{
+ 
+        let id  = boton.currentTarget.getAttribute("data-id-propia");
+        tareas = tareas.filter(tarea => tarea.idObjeto !== id);
+       
+        generarHtml(tareas);
+    });
+})};
+ 
+function cargarBotonesMarcado() {
+    let marcar = document.querySelectorAll("span.marcar");
+    marcar.forEach(botonMarcar =>{
+        botonMarcar.addEventListener('click', boton => {
+            let id = boton.currentTarget.getAttribute("data-id-propia");
+            let tarea = tareas.find(t => t.idObjeto === id);
+       
+            tarea.hecho = (tarea.hecho === "false") ? "true" : "false";
+            generarHtml(tareas);
+        });
+       
+})};
+ 
+ 
+function generarHtml(tareas) {
+    ul.innerHTML = "";
+ 
+    tareas.forEach((tarea) => {
+        let li = document.createElement('li');
+ 
+        li.setAttribute("id", tarea.idObjeto);
+        li.classList.add("todo");
+        li.dataset.hecho = tarea.hecho;
+        let boton = document.createElement('span');
+        boton.classList.add("btn");
+        boton.dataset.idPropia = tarea.idObjeto;
+ 
+        let marcar = document.createElement('span');
+        marcar.classList.add('marcar');
+        marcar.dataset.idPropia = tarea.idObjeto;
+        marcar.textContent = "X"
+ 
+        boton.textContent = "Borrar";
+        li.append(marcar);
+        li.append(document.createTextNode(tarea.contenido));
+        li.append(boton);
+        ul.append(li);
+ 
+       
+    });
+        cargarBotonesMarcado();
+        cargarBotones();
+}
+ 
+borrarLista.addEventListener('click', ()=>{
+    tareas.length = 0;
+    generarHtml(tareas);
+});
+ 
+ 
+function generarId(){
+    return Math.floor((Math.random() * (36**4))).toString(36).padStart(4, '0');
+ 
+}
