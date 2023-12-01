@@ -1,10 +1,8 @@
-
- for (let i = 1; i <= 100; i++) {
+for (let i = 1; i <= 100; i++) {
   let div = document.createElement("div");
 
   div.classList.add('cuadros');
 
-  
   div.textContent = i;
 
   div.addEventListener('click', toggleSelection);
@@ -23,6 +21,8 @@ function toggleSelection(event) {
   } else {
     event.target.style.backgroundColor = 'blue';
   }
+
+  alert(`Número: ${event.target.textContent}`);
 }
 
 function markRed(event) {
@@ -33,3 +33,4 @@ function markRed(event) {
   event.target.removeEventListener('click', toggleSelection);
   event.target.removeEventListener('contextmenu', markRed);
 }
+
