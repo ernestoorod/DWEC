@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista filtrada de películas</title>
+    <link rel="stylesheet" href="../styles/lista.css">
+</head>
+<body>
+    
+    <h1>Lista de películas</h1>
+
+    <div class="modal hidden">
+        <div class="modal-content">
+            <div id="movie-detail">
+                <!--
+                    <img src="../images/backdrops/t5zCBSB5xMDKcDqe91qahCOUYVV.jpg" >
+                    <div class="title">Título de la película</div>
+                    <div class="overview">
+                        <p>
+                            "Un guardia de seguridad con problemas comienza a trabajar en Freddy Fazbear's Pizza. Mientras pasa su primera noche en el trabajo, se da cuenta de que el turno de noche en Freddy's no será tan fácil de superar."
+                        </p>
+                    </div> 
+                -->
+            </div>
+            <div id="close-modal">Cerrar</div>
+        </div>
+    </div>
+
+    <div id="container" >
+        <div id="filters">
+            <input type="text" name="filter" id="filter">
+            <div class="btn" id="apply">Aplicar</div>
+        </div>
+        <div id="movies-header">
+            <div class="title" id="sort_title">Título</div>
+            <div class="popularity" id="sort_pop">Popularidad</div>
+            <div class="vote_average" id="sort_vote">Valoración</div>
+            <div class="genre">Género</div>
+        </div>
+        <div id="movies-list">
+            <!--
+                // Esto se repite para cada una de las películas
+                <div class="movie">
+                    <div class="title">El título de la peli</div>
+                    <div class="popularity">234.23</div>
+                    <div class="vote_average">23.1</div>
+                    <div class="icons">
+                        <img src="'../icons/western.png" alt="Western" >
+                        <img src="'../icons/drama.png" alt="Drama" >
+                    </div>
+                </div>
+            -->
+        </div>
+    </div>
+
+    <script src="../data/movies.js"></script>
+    <script src="../js/list.js"></script>
+</body>
+</html>

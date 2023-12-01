@@ -1,0 +1,217 @@
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #e0e8f0;
+    color: black;
+    box-sizing: border-box;
+}
+
+
+#movies-list {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+#movies-list .movie {
+    display: flex;
+    height: 50px;
+}
+
+#movies-header {
+    display: flex;
+    background-color: #92b2d9;
+    height: 40px;
+    align-items: center;
+    font-size: 1.3em;
+}
+
+
+#movies-header .title {
+    width: 600px;
+    text-align: center;
+    cursor: n-resize;
+}
+
+#movies-header .popularity {
+    width: 150px;
+    text-align: center;
+}
+
+#movies-header .vote_average {
+    width: 100px;
+}
+
+#movies-header .genre {
+    width: 250px;
+    text-align: center;
+}
+
+#movies-list .movies-header .vote_average {
+    width: 100px;
+}
+
+#movies-list .title {
+    width: 580px;
+    font-size: 1.1em;
+    line-height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.movie:hover {
+    background-color: #92b2d9;
+}
+
+#movies-list .popularity {
+    width: 150px;
+    line-height: 50px;
+    text-align: center;
+}
+
+#movies-list .vote_average {
+    width: 100px;
+    line-height: 50px;
+    text-align: center;
+}
+
+#movies-list .icons {
+    height: 50px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#movies-list .movie div {
+    border-top: 2px solid white;
+
+}
+
+#movies-list .icons img {
+    height: 30px;
+    padding: 5px;
+}
+
+#sort-buttons {
+    display: flex;
+}
+
+#filters {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.btn {
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #598cc9;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    margin: 5px;
+}
+
+.btn:hover {
+    transform: scale(1.04);
+    box-shadow: 3px 3px 3px #cdcdcd;
+}
+
+input {
+    width: 600px;
+    font-size: 1.7em;
+    padding-left: 10px;
+    margin-right: 20px;
+}
+
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    position: fixed;
+    background-color: black;
+    border: 1px solid #888;
+    width: 600px; /* Could be more or less, depending on screen size */
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    box-shadow: 0 0 15px white;
+  }
+
+  .modal-content img{
+    width: 600px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  .modal-content .title {
+    width: 600px;
+    height: 80px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2em;
+    text-align: center;
+  }
+
+  .modal-content .overview {
+    padding: 15px;
+    color: white;
+    font-size: 1.05em;
+    text-align: justify;
+    max-height: 105px;    
+  }
+
+  .modal-content .overview p {
+    display: -webkit-box; /* para compatibilidad con navegadores basados en WebKit */
+    -webkit-line-clamp: 4; /* número máximo de líneas a mostrar */
+    -webkit-box-orient: vertical; /* orientación del contenido */
+    overflow:hidden;
+    text-overflow: ellipsis;
+    max-height: 75px;
+  }
+  
+  /* The Close Button */
+ #close-modal {
+    color: #aaa;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    padding-right: 20px;
+  }
+  
+  #close-modal:hover,
+  #close-modal:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .hidden {
+    display: none;
+  }

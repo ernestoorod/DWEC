@@ -1,6 +1,7 @@
 const boardElement = document.getElementById('board');
-const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
-for (let row = 0; row < 8; row++) {
+const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+
+for (let row = 1; row <= 8; row++) {
     for (let col = 0; col < 8; col++) {
         const cell = document.createElement('span');
         cell.classList.add('cell');
@@ -8,6 +9,7 @@ for (let row = 0; row < 8; row++) {
         boardElement.appendChild(cell);
     }
 }
+
 const cells = document.getElementsByClassName('cell');
 for (let i = 0; i < cells.length; i++) {
     cells[i].addEventListener('click', function() {
@@ -15,3 +17,4 @@ for (let i = 0; i < cells.length; i++) {
         alert(`Has pulsado en la casilla ${coord}`);
     });
 }
+
