@@ -21,8 +21,6 @@ function toggleSelection(event) {
   } else {
     event.target.style.backgroundColor = 'blue';
   }
-
-  alert(`Número: ${event.target.textContent}`);
 }
 
 function markRed(event) {
