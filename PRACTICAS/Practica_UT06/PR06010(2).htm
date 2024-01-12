@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresiones Regulares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        .result {
+            font-weight: bold;
+            color: green;
+        }
+        .error {
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <label for="fechaInput">Fecha (dd/mm/aaaa):</label>
+    <input type="text" id="fechaInput" oninput="validar('fecha', this.value)"><br>
+
+    <label for="telefonoInput">Teléfono (+xx) xxx xxxxxx:</label>
+    <input type="text" id="telefonoInput" oninput="validar('telefono', this.value)"><br>
+
+    <label for="emailInput">Correo Electrónico:</label>
+    <input type="text" id="emailInput" oninput="validar('email', this.value)"><br>
+
+    <label for="colorInput">Código de Color Hexadecimal:</label>
+    <input type="text" id="colorInput" oninput="validar('color', this.value)"><br>
+
+    <label for="ipInput">Dirección IP:</label>
+    <input type="text" id="ipInput" oninput="validar('ip', this.value)"><br>
+
+    <label for="urlInput">URL:</label>
+    <input type="text" id="urlInput" oninput="validar('url', this.value)"><br>
+
+    <label for="passwordInput">Contraseña:</label>
+    <input type="text" id="passwordInput" oninput="validar('password', this.value)"><br>
+
+    <label for="nifInput">NIF:</label>
+    <input type="text" id="nifInput" oninput="validar('nif', this.value)"><br>
+
+    <label for="matriculaInput">Matrícula de Coche:</label>
+    <input type="text" id="matriculaInput" oninput="validar('matricula', this.value)"><br>
+
+    <script>
+        function validar(tipo, valor) {
+            var regex;
+
+            switch (tipo) {
+                case 'fecha':
+                    regex = /^\d{2}\/\d{2}\/\d{4}$/;
+                    break;
+                case 'telefono':
+                    regex = /^\(\+\d{2}\)\s?\d{3}\s?\d{6}$/;
+                    break;
+                case 'email':
+                    regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                    break;
+                case 'color':
+                    regex = /^#[0-9a-fA-F]{6}$/;
+                    break;
+                case 'ip':
+                    regex = /^(25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.([0-9]|[1-9][0-9]|1[0-9][0-9]?){3}$/;
+                    break;
+                case 'url':
+                    regex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/;
+                    break;
+                case 'password':
+                    regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+                    break;
+                case 'nif':
+                    regex = /^\d{8}[a-zA-Z]$/;
+                    break;
+                case 'matricula':
+                    regex = /^\d{4}[a-zA-Z]{3}$/;
+                    break;
+            }
+
+            var resultado = document.getElementById(tipo + 'InputResult');
+            if (regex.test(valor)) {
+                resultado.innerHTML = "<span class='result'>¡Válido!</span>";
+            } else {
+                resultado.innerHTML = "<span class='error'>¡No válido!</span>";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -5,8 +5,8 @@ for (let i = 1; i <= 100; i++) {
   
     div.textContent = i;
   
-    div.addEventListener('click', toggleSelection);
-    div.addEventListener('contextmenu', markRed);
+    div.addEventListener('click', izquierda);
+    div.addEventListener('contextmenu', derecha);
   
     document.body.appendChild(div);
   
@@ -15,7 +15,7 @@ for (let i = 1; i <= 100; i++) {
     }
   }
   
-  function toggleSelection(event) {
+  function izquierda(event) {
     if (event.target.style.backgroundColor === 'blue') {
       event.target.style.backgroundColor = 'white';
     } else {
@@ -25,12 +25,14 @@ for (let i = 1; i <= 100; i++) {
     alert(`Número: ${event.target.textContent}`);
   }
   
-  function markRed(event) {
+  function derecha(event) {
     event.preventDefault();
   
     event.target.style.backgroundColor = 'red';
+
+    alert(`Número: ${event.target.textContent}`);
   
-    event.target.removeEventListener('click', toggleSelection);
-    event.target.removeEventListener('contextmenu', markRed);
+    event.target.removeEventListener('click', izquierda);
+    event.target.removeEventListener('contextmenu', derecha);
   }
   
