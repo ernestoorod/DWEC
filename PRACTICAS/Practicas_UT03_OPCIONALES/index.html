@@ -7,11 +7,12 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: url('https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2019/03/javascript.jpg?tf=3840x') no-repeat center center fixed;
+            background: url('https://www.thoughtco.com/thmb/094YF3bQBiuV_13n92GFQZWkM7k=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/JavaScript-58acbb8a3df78c345bad32c2.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #fff;
             margin: 0;
             padding: 0;
+            height: 100vh;
         }
 
         h1 {
@@ -22,7 +23,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo con transparencia */
         }
 
         td {
@@ -39,11 +40,12 @@
         }
 
         table#Lista_de_practicas {
-            background-color: rgba(78, 78, 78, 0.9); /* Fondo gris oscuro con transparencia */
+            background-color: rgba(78, 78, 78, 0.8);
         }
 
         table#Lista_de_ejercicios {
-            background-color: rgba(88, 88, 88, 1); /* Fondo gris claro con transparencia */
+            background-color: rgba(88, 88, 88, 0.9);
+            height: 100%;
         }
 
         #practicas-container {
@@ -60,7 +62,17 @@
             text-decoration: underline;
         }
 
-       
+        #lista-ejercicios-container {
+            text-align: center;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        h2 {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 <body>
@@ -69,19 +81,7 @@
             <td>
                 <h1>Lista de prácticas:</h1>
                 <div id="practicas-container">
-                    <a href="./PRACTICAS/Practica_UT01/UT01.html">Práctica 1</a>
-                    <a href="./PRACTICAS/Practica_UT02/UT02.html">Práctica 2</a>
-                    <a href="./PRACTICAS/Practica_UT03/UT03.html">Práctica 3</a>
-                    <a href="./PRACTICAS/Practica_UT04/UT04.html">Práctica 4</a>
-                    <a href="">Práctica 5</a>
-                    <a href="./PRACTICAS/Practica_UT06/UT06.html">Práctica 6</a>
-                    <a href="">Práctica 7</a>
-                    <a href="">Práctica 8</a>
-                    <a href="">Práctica 9</a>
-                </div>
-                <h1>Practicas Opcionales: </h1>
-                <div>
-                    <a href="./PRACTICAS/Practicas_UT03_OPCIONALES/index.html">Opcionales UT03</a>
+                    <a href="../index.html">Volver</a>
                 </div>
             </td>
         </tr>
@@ -89,13 +89,19 @@
     <table id="Lista_de_ejercicios">
         <tr>
             <td>
-                
+                <h1>UT03. Objetos y tipos de datos</h1>         
+                <h2>OPCIONALES CADENAS</h2>
+                <h3><a href="./OPCIONALES_CADENAS/HTML/OPT0301.html">OPT0301</a></h3>
+                <h3><a href="./OPCIONALES_CADENAS/HTML/OPT0302.html">OPT0302</a></h3>
+                <h3><a href="./OPCIONALES_CADENAS/HTML/OPT0303.html">OPT0303</a></h3>
+                <h2>OPCIONALES ARRAYS</h2>
+                <h3><a href="./OPCIONALES_ARRAYS/HTML/OPT0304.html">OPT0304</a></h3>
+                <h3><a href="./OPCIONALES_ARRAYS/HTML/OPT0305.html">OPT0305</a></h3>
+                <h3><a href="./OPCIONALES_ARRAYS/HTML/OPT0306.html">OPT0306</a></h3>
+                <h2>OPCIONALES REPASO</h2>
             </td>
         </tr>
     </table>
-
 </body>
 </html>
-
-
 
