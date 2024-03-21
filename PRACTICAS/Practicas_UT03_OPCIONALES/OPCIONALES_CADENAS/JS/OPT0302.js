@@ -4,20 +4,22 @@ function isIsograma(palabra) {
 
     palabra = palabra.toLowerCase();
 
-    for (let i = 0; i < palabra.length; i++) {
+    contador = {};
 
-        let letra = palabra[i];
+    palabra.split('').forEach(letra => contador[letra] = contador[letra] ? contador[letra] + 1 : 1);
 
-        for (let e = i + 1; e < palabra.length; e++) {
+    let veces;
 
-            if (letra == palabra[e]) {
-                return true;
-            }
-
-        }
+    for(letra in contador){
+        if(!veces){
+            veces = contador[letra];
+        }else if(contador[letra] != veces){
+            return false;
+        };
+        
     }
 
-    return false;
+    return true;
 }
 
 if (isIsograma(palabra)) {
