@@ -1,4 +1,4 @@
-let nombresCompletos = ['Victor González Rodríguez', 'Pepe Pérez Fernández'];
+let nombresCompletos = ['Victor González Rodríguez', 'Pepe Pérez Fernández', 'Ernesto Rodriguez Rodriguez'];
 
 function obtenerNombres(arr) {
     let resultados = [];
