@@ -1,16 +1,20 @@
-let arr = ['Victor González Rodríguez', 'Ernesto Rodriguez Rodriguez'];
+let nombresCompletos = ['Victor González Rodríguez', 'Pepe Pérez Fernández'];
 
-function getNames(arr) {
-    let resultado = [];
+function obtenerNombres(arr) {
+    let resultados = [];
 
-    for (let i = 0; i < arr.length; i++) {
-        let partes = arr[i].split('');
-        let nombre = partes[0];
-        let apellidos = partes.slice(1).join('');
-        resultado.push({ nombre, apellidos });
-    }
+    arr.forEach(nombreCompleto => {
+        let nombres = nombreCompleto.split(' ');
+        let nombre = nombres[0];
+        let apellidos = nombres.slice(1).join(' ');
+        
+        resultados.push({
+            Nombre: nombre,
+            Apellidos: apellidos
+        });
+    });
 
-    return resultado;
+    return resultados;
 }
 
-console.log(getNames(arr));
+console.log(obtenerNombres(nombresCompletos));

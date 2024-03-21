@@ -1,21 +1,21 @@
-let strings = ['hola', 'victor', 'villabalter', 'IES'];
+let array = ['hola', 'victor', 'villabalter', 'IES'];
 
 function maxString(arr) {
     if (arr.length == 0) {
         return null;
     }
 
-    let maxLength = 0;
-    let longestString = '';
+    let maximo = 0;
+    let medida = '';
 
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i].length > maxLength) {
-            maxLength = arr[i].length;
-            longestString = arr[i];
+        if (arr[i].length > maximo) {
+            maximo = arr[i].length;
+            medida = arr[i];
         }
     }
 
-    return longestString;
+    return medida;
 }
 
-console.log(maxString(strings));
+console.log(maxString(array));
