@@ -103,7 +103,7 @@ let carrito = document.getElementById("cart-section");
 let currentPage = 1;
 let itemsPerPage = 6;
 
-function productosfuncion(pagina) {
+function dibujarproductos(pagina) {
   productos.innerHTML = '';
 
   let startIndex = (pagina - 1) * itemsPerPage;
@@ -152,29 +152,29 @@ function paginas(currentPage) {
 
   let totalPages = Math.ceil(products.length / itemsPerPage);
 
-  let prevButton = document.createElement('button');
-  prevButton.textContent = '◄';
-  prevButton.addEventListener('click', () => {
+  let atras = document.createElement('button');
+  atras.textContent = '◄';
+  atras.addEventListener('click', () => {
       if (currentPage > 1) {
           currentPage--;
           productosfuncion(currentPage);
       }
   });
-  paginacion.appendChild(prevButton);
+  paginacion.appendChild(atras);
 
-  let pageIndicator = document.createElement('span');
-  pageIndicator.textContent = `Página ${currentPage} de ${totalPages}`;
-  paginacion.appendChild(pageIndicator);
+  let indicador = document.createElement('span');
+  indicador.textContent = `Página ${currentPage} de ${totalPages}`;
+  paginacion.appendChild(indicador);
 
-  let nextButton = document.createElement('button');
-  nextButton.textContent = '►';
-  nextButton.addEventListener('click', () => {
+  let alante = document.createElement('button');
+  alante.textContent = '►';
+ alante.addEventListener('click', () => {
       if (currentPage < totalPages) {
           currentPage++;
           productosfuncion(currentPage);
       }
   });
-  paginacion.appendChild(nextButton);
+  paginacion.appendChild(alante);
 
   productos.appendChild(paginacion);
 }
@@ -238,4 +238,4 @@ function renderCart() {
   totalAmountCell.textContent = `${(total / 100).toFixed(2)}€`;
 }
 
-productosfuncion(currentPage);
+dibujarproductos(currentPage);
