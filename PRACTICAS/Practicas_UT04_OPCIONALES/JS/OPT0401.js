@@ -180,11 +180,11 @@ function paginas(currentPage) {
 }
 
 function addToCart(event) {
-  const productId = event.target.dataset.id;
-  const productToAdd = products.find(product => product.id === productId);
+  let productId = event.target.dataset.id;
+  let productToAdd = products.find(product => product.id === productId);
 
   if (productToAdd) {
-      const existingCartItem = cart.find(item => item.id === productId);
+      let existingCartItem = cart.find(item => item.id === productId);
       if (existingCartItem) {
           existingCartItem.quantity++;
       } else {
@@ -202,6 +202,7 @@ function renderCart() {
   let total = 0;
 
   let table = document.createElement('table');
+  table.classList.add("cart-table");
   let header = table.createTHead();
   let row = header.insertRow();
   let headers = ['Producto', 'Cantidad', 'Precio'];
@@ -214,12 +215,13 @@ function renderCart() {
   let body = table.createTBody();
   cart.forEach(item => {
       let itemRow = body.insertRow();
+
       let nameCell = itemRow.insertCell();
       nameCell.textContent = item.product;
+
       let quantityCell = itemRow.insertCell();
       quantityCell.textContent = item.quantity;
-      let priceCell = itemRow.insertCell();
-      priceCell.textContent = `${(item.price / 100).toFixed(2)}€`;
+
       let totalCell = itemRow.insertCell();
       let itemTotal = item.price * item.quantity;
       total += itemTotal;
@@ -230,7 +232,7 @@ function renderCart() {
 
   let totalRow = body.insertRow();
   let totalCell = totalRow.insertCell();
-  totalCell.colSpan = 3;
+  totalCell.colSpan = 2;
   totalCell.textContent = 'Total';
   let totalAmountCell = totalRow.insertCell();
   totalAmountCell.textContent = `${(total / 100).toFixed(2)}€`;
