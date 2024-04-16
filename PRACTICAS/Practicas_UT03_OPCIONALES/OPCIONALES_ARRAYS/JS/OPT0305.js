@@ -1,9 +1,6 @@
 let array = ['hola', 'victor', 'villabalter', 'IES'];
 
 function maxString(arr) {
-    if (arr.length == 0) {
-        return null;
-    }
 
     let maximo = 0;
     let medida = '';
