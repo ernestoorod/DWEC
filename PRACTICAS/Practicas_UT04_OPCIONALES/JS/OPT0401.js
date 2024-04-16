@@ -179,7 +179,7 @@ function paginas(currentPage) {
   productos.appendChild(paginacion);
 }
 
-function addToCart(event) {
+function añadircarro(event) {
   let productId = event.target.dataset.id;
   let productToAdd = products.find(product => product.id === productId);
 
@@ -190,13 +190,13 @@ function addToCart(event) {
       } else {
           cart.push({ ...productToAdd, quantity: 1 });
       }
-      renderCart();
+      dibujarcarro();
   }
 }
 
 let cart = [];
 
-function renderCart() {
+function dibujarcarro() {
   carrito.innerHTML = '';
 
   let total = 0;
