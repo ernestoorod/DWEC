@@ -105,3 +105,24 @@ body {
 .paginacion button:hover {
     background-color: #e0e0e0;
 }
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.cart-table th,
+.cart-table td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
+}
+
+.cart-table th {
+    background-color: #fff;
+}
+
+.cart-table td {
+    background-color: #f9f9f9;
+}
