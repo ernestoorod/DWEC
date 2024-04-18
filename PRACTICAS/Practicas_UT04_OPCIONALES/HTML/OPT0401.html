@@ -14,7 +14,33 @@
             <!-- Aquí es donde tienes que insertar los productos -->
         </div>
         <div id="cart-section">
-            <!-- Espacio reservado para el carrito de la compra -->
+            <table id="cart-table" class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Cantidad</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-body">
+                    <!-- Aquí es donde se mostrarán los elementos del carrito -->
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">Total</td>
+                        <td id="total-amount"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="contenido">
+            <span class="cerrar">X</span>
+            <p id="nombre_producto"></p>
+            <input type="number" name="cantidad" id="cantidad" class="cantidad" min="1" value="1">
+            <button id="añadir_al_carrito" class="añadir_carrito">Añadir al carrito</button>
         </div>
     </div>
 

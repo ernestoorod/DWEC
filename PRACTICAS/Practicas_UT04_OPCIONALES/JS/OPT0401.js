@@ -95,52 +95,55 @@ let products = [
     price: 320,
     image: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/pineapple.jpg',
   },
-
-]
+];
 
 let productos = document.getElementById("products-section");
 let carrito = document.getElementById("cart-section");
 let currentPage = 1;
 let itemsPerPage = 6;
+let cantidadModal = document.getElementById("cantidad");
 
-function dibujarproductos(pagina) {
+function dibujarProductos(pagina) {
   productos.innerHTML = '';
 
   let startIndex = (pagina - 1) * itemsPerPage;
   let endIndex = startIndex + itemsPerPage;
-  let mostrarproductos = products.slice(startIndex, endIndex);
+  let mostrarProductos = products.slice(startIndex, endIndex);
 
-  mostrarproductos.forEach(product => {
-      let frutas = document.createElement('div');
-      frutas.classList.add('frutas');
-      productos.appendChild(frutas);
+  mostrarProductos.forEach(product => {
+    let frutas = document.createElement('div');
+    frutas.classList.add('frutas');
+    productos.appendChild(frutas);
 
-      let imagen = document.createElement('img');
-      imagen.src = product.image;
-      imagen.classList.add('imagen');
-      frutas.appendChild(imagen);
+    let imagen = document.createElement('img');
+    imagen.src = product.image;
+    imagen.classList.add('imagen');
+    frutas.appendChild(imagen);
 
-      let nombre = document.createElement('p');
-      nombre.textContent = product.product;
-      nombre.classList.add('nombre');
-      frutas.appendChild(nombre);
+    let nombre = document.createElement('p');
+    nombre.textContent = product.product;
+    nombre.classList.add('nombre');
+    frutas.appendChild(nombre);
 
-      let precioañadir = document.createElement('div');
-      precioañadir.classList.add('precioañadir');
+    let precioAñadir = document.createElement('div');
+    precioAñadir.classList.add('precioañadir');
 
-      let precio = document.createElement('p');
-      precio.textContent = `${(product.price / 100).toFixed(2)}€/kg`;
-      precio.classList.add('precio');
-      precioañadir.appendChild(precio);
+    let precio = document.createElement('p');
+    precio.textContent = `${(product.price / 100).toFixed(2)}€/kg`;
+    precio.classList.add('precio');
+    precioAñadir.appendChild(precio);
 
-      let añadir = document.createElement('button');
-      añadir.textContent = 'Añadir';
-      añadir.classList.add('añadir');
-      añadir.dataset.id = product.id;
-      añadir.addEventListener('click', addToCart);
-      precioañadir.appendChild(añadir);
+    let añadir = document.createElement('button');
+    añadir.textContent = 'Añadir';
+    añadir.classList.add('añadir');
+    añadir.dataset.productName = product.product;
+    añadir.dataset.productId = product.id;
+    añadir.addEventListener('click', () => {
+      mostrarModal(añadir.dataset.productName, añadir.dataset.productId);
+    });
+    precioAñadir.appendChild(añadir);
 
-      frutas.appendChild(precioañadir);
+    frutas.appendChild(precioAñadir);
   });
 
   paginas(pagina);
@@ -155,10 +158,10 @@ function paginas(currentPage) {
   let atras = document.createElement('button');
   atras.textContent = '◄';
   atras.addEventListener('click', () => {
-      if (currentPage > 1) {
-          currentPage--;
-          productosfuncion(currentPage);
-      }
+    if (currentPage > 1) {
+      currentPage--;
+      dibujarProductos(currentPage);
+    }
   });
   paginacion.appendChild(atras);
 
@@ -168,74 +171,105 @@ function paginas(currentPage) {
 
   let alante = document.createElement('button');
   alante.textContent = '►';
- alante.addEventListener('click', () => {
-      if (currentPage < totalPages) {
-          currentPage++;
-          productosfuncion(currentPage);
-      }
+  alante.addEventListener('click', () => {
+    if (currentPage < totalPages) {
+      currentPage++;
+      dibujarProductos(currentPage);
+    }
   });
   paginacion.appendChild(alante);
 
   productos.appendChild(paginacion);
 }
 
-function añadircarro(event) {
-  let productId = event.target.dataset.id;
-  let productToAdd = products.find(product => product.id === productId);
+function mostrarModal(productName, productId) {
+  let modal = document.getElementById('modal');
+  modal.style.display = 'block';
 
-  if (productToAdd) {
-      let existingCartItem = cart.find(item => item.id === productId);
-      if (existingCartItem) {
-          existingCartItem.quantity++;
-      } else {
-          cart.push({ ...productToAdd, quantity: 1 });
-      }
-      dibujarcarro();
+  let nombreProducto = document.getElementById('nombre_producto');
+  nombreProducto.textContent = productName;
+
+  let existe = cart.find(item => item.id === productId);
+  if (existe) {
+    cantidadModal.value = existe.quantity;
+  } else {
+    cantidadModal.value = 1;
+  }
+
+  let añadirAlCarritoButton = document.getElementById('añadir_al_carrito');
+  
+  añadirAlCarritoButton.addEventListener('click', añadirAlCarritoclick);
+
+  function añadirAlCarritoclick() {
+    let cantidad = parseInt(cantidadModal.value);
+    let existerestar = cart.find(item => item.id === productId);
+    if (existerestar) {
+      let difference = cantidad - existerestar.quantity;
+      addToCart(productId, difference);
+    } else {
+      addToCart(productId, cantidad);
+    }
+    cerrarModal();
+    
+    añadirAlCarritoButton.removeEventListener('click', añadirAlCarritoclick);
   }
 }
 
+
+
+function cerrarModal() {
+  let modal = document.getElementById('modal');
+  modal.style.display = 'none';
+}
+
+document.querySelector('.cerrar').addEventListener('click', cerrarModal);
+
 let cart = [];
 
-function dibujarcarro() {
-  carrito.innerHTML = '';
+function addToCart(productId, quantity) {
+  console.log(productId);
+  console.log(quantity);
+  let productToAdd = products.find(product => product.id === productId);
 
+  if (productToAdd) {
+    let existingCartItem = cart.find(item => item.id === productId);
+    if (existingCartItem) {
+      existingCartItem.quantity += quantity;
+    } else {
+      cart.push({ ...productToAdd, quantity: quantity });
+    }
+    dibujarCarrito();
+  }
+}
+
+function dibujarCarrito() {
+  let cartBody = document.getElementById('cart-body');
+  let totalAmountCell = document.getElementById('total-amount');
   let total = 0;
 
-  let table = document.createElement('table');
-  table.classList.add("cart-table");
-  let header = table.createTHead();
-  let row = header.insertRow();
-  let headers = ['Producto', 'Cantidad', 'Precio'];
-  headers.forEach(headerText => {
-      let th = document.createElement('th');
-      th.textContent = headerText;
-      row.appendChild(th);
-  });
+  cartBody.innerHTML = '';
 
-  let body = table.createTBody();
   cart.forEach(item => {
-      let itemRow = body.insertRow();
+    let itemRow = document.createElement('tr');
 
-      let nameCell = itemRow.insertCell();
-      nameCell.textContent = item.product;
+    let quantityCell = document.createElement('td');
+    quantityCell.textContent = item.quantity;
+    itemRow.appendChild(quantityCell);
 
-      let quantityCell = itemRow.insertCell();
-      quantityCell.textContent = item.quantity;
+    let nameCell = document.createElement('td');
+    nameCell.textContent = item.product;
+    itemRow.appendChild(nameCell);
 
-      let totalCell = itemRow.insertCell();
-      let itemTotal = item.price * item.quantity;
-      total += itemTotal;
-      totalCell.textContent = `${(itemTotal / 100).toFixed(2)}€`;
+    let totalCell = document.createElement('td');
+    let itemTotal = item.price * item.quantity;
+    total += itemTotal;
+    totalCell.textContent = `${(itemTotal / 100).toFixed(2)}€`;
+    itemRow.appendChild(totalCell);
+
+    cartBody.appendChild(itemRow);
   });
 
-  carrito.appendChild(table);
-
-  let totalRow = body.insertRow();
-  let totalCell = totalRow.insertCell();
-  totalCell.colSpan = 2;
-  totalCell.textContent = 'Total';
-  let totalAmountCell = totalRow.insertCell();
   totalAmountCell.textContent = `${(total / 100).toFixed(2)}€`;
 }
 
-dibujarproductos(currentPage);
+dibujarProductos(currentPage);
