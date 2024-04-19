@@ -1,221 +1,219 @@
-let products = [
+let productos = [
   {
     id: '1000',
-    product: 'Fresas de Huelva',
-    price: 410,
-    image: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/fresas.jpg',
+    producto: 'Fresas de Huelva',
+    precio: 410,
+    imagen: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/fresas.jpg',
   },
   {
     id: '1001',
-    product: 'Kiwi amarillo',
-    price: 245,
-    image: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/kiwis.jpg',
+    producto: 'Kiwi amarillo',
+    precio: 245,
+    imagen: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/kiwis.jpg',
   },
   {
     id: '1002',
-    product: 'Manzana roja',
-    price: 195,
-    image: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/manzanas_rojas.jpg',
+    producto: 'Manzana roja',
+    precio: 195,
+    imagen: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/manzanas_rojas.jpg',
   },
   {
     id: '1003',
-    product: 'Manzana verde',
-    price: 170,
-    image: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/manzanas_verdes.jpg',
+    producto: 'Manzana verde',
+    precio: 170,
+    imagen: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/manzanas_verdes.jpg',
   },
   {
     id: '1004',
-    product: 'Melón',
-    price: 135,
-    image: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/melones.jpg',
+    producto: 'Melón',
+    precio: 135,
+    imagen: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/melones.jpg',
   },
   {
     id: '1005',
-    product: 'Naranja valenciana',
-    price: 160,
-    image: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/naranjas.jpg',
+    producto: 'Naranja valenciana',
+    precio: 160,
+    imagen: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/naranjas.jpg',
   },
   {
     id: '1006',
-    product: 'Pera conferencia',
-    price: 210,
-    image: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/peras.jpg',
+    producto: 'Pera conferencia',
+    precio: 210,
+    imagen: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/peras.jpg',
   },
   {
     id: '1007',
-    product: 'Plátano',
-    price: 260,
-    image: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/platanos.jpg',
+    producto: 'Plátano',
+    precio: 260,
+    imagen: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/platanos.jpg',
   },
   {
     id: '1008',
-    product: 'Sandía',
-    price: 115,
-    image: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/sandias.jpg',
+    producto: 'Sandía',
+    precio: 115,
+    imagen: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/sandias.jpg',
   },
   {
     id: '1009',
-    product: 'Uva',
-    price: 195,
-    image: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/uvas.jpg',
+    producto: 'Uva',
+    precio: 195,
+    imagen: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/uvas.jpg',
   },
   {
     id: '1010',
-    product: 'Aguacate',
-    price: 415,
-    image: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/aguacate.jpg',
+    producto: 'Aguacate',
+    precio: 415,
+    imagen: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/aguacate.jpg',
   },
   {
     id: '1011',
-    product: 'Cereza del Bierzo',
-    price: 520,
-    image: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/cereza.jpg',
+    producto: 'Cereza del Bierzo',
+    precio: 520,
+    imagen: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/cereza.jpg',
   },
   {
     id: '1012',
-    product: 'Granada',
-    price: 310,
-    image: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/granada.jpg',
+    producto: 'Granada',
+    precio: 310,
+    imagen: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/granada.jpg',
   },
   {
     id: '1013',
-    product: 'Limón',
-    price: 155,
-    image: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/limon.jpg',
+    producto: 'Limón',
+    precio: 155,
+    imagen: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/limon.jpg',
   },
   {
     id: '1014',
-    product: 'Nectarina',
-    price: 180,
-    image: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/nectarina.jpg',
+    producto: 'Nectarina',
+    precio: 180,
+    imagen: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/nectarina.jpg',
   },
   {
     id: '1015',
-    product: 'Piña',
-    price: 320,
-    image: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/pineapple.jpg',
+    producto: 'Piña',
+    precio: 320,
+    imagen: 'https://vgonzalez165.github.io/dwec/assets/pr0414/imgs/pineapple.jpg',
   },
 ];
 
-let productos = document.getElementById("products-section");
-let carrito = document.getElementById("cart-section");
-let currentPage = 1;
-let itemsPerPage = 6;
+let seccionProductos = document.getElementById("products-section");
+let seccionCarrito = document.getElementById("cart-section");
+let paginaActual = 1;
+let productosPorPagina = 8;
 let cantidadModal = document.getElementById("cantidad");
 
 function dibujarProductos(pagina) {
-  productos.innerHTML = '';
+  seccionProductos.innerHTML = '';
 
-  let startIndex = (pagina - 1) * itemsPerPage;
-  let endIndex = startIndex + itemsPerPage;
-  let mostrarProductos = products.slice(startIndex, endIndex);
+  let indiceInicio = (pagina - 1) * productosPorPagina;
+  let indiceFin = indiceInicio + productosPorPagina;
+  let productosAMostrar = productos.slice(indiceInicio, indiceFin);
 
-  mostrarProductos.forEach(product => {
-    let frutas = document.createElement('div');
-    frutas.classList.add('frutas');
-    productos.appendChild(frutas);
+  productosAMostrar.forEach(producto => {
+    let fruta = document.createElement('div');
+    fruta.classList.add('frutas');
+    seccionProductos.appendChild(fruta);
 
     let imagen = document.createElement('img');
-    imagen.src = product.image;
+    imagen.src = producto.imagen;
     imagen.classList.add('imagen');
-    frutas.appendChild(imagen);
+    fruta.appendChild(imagen);
 
     let nombre = document.createElement('p');
-    nombre.textContent = product.product;
+    nombre.textContent = producto.producto;
     nombre.classList.add('nombre');
-    frutas.appendChild(nombre);
+    fruta.appendChild(nombre);
 
     let precioAñadir = document.createElement('div');
     precioAñadir.classList.add('precioañadir');
 
     let precio = document.createElement('p');
-    precio.textContent = `${(product.price / 100).toFixed(2)}€/kg`;
+    precio.textContent = `${(producto.precio / 100).toFixed(2)}€/kg`;
     precio.classList.add('precio');
     precioAñadir.appendChild(precio);
 
     let añadir = document.createElement('button');
     añadir.textContent = 'Añadir';
     añadir.classList.add('añadir');
-    añadir.dataset.productName = product.product;
-    añadir.dataset.productId = product.id;
+    añadir.dataset.productoNombre = producto.producto;
+    añadir.dataset.productoId = producto.id;
     añadir.addEventListener('click', () => {
-      mostrarModal(añadir.dataset.productName, añadir.dataset.productId);
+      mostrarModal(añadir.dataset.productoNombre, añadir.dataset.productoId);
     });
     precioAñadir.appendChild(añadir);
 
-    frutas.appendChild(precioAñadir);
+    fruta.appendChild(precioAñadir);
   });
 
   paginas(pagina);
 }
 
-function paginas(currentPage) {
+function paginas(paginaActual) {
   let paginacion = document.createElement('div');
   paginacion.classList.add('paginacion');
 
-  let totalPages = Math.ceil(products.length / itemsPerPage);
+  let totalPaginas = Math.ceil(productos.length / productosPorPagina);
 
   let atras = document.createElement('button');
   atras.textContent = '◄';
   atras.addEventListener('click', () => {
-    if (currentPage > 1) {
-      currentPage--;
-      dibujarProductos(currentPage);
+    if (paginaActual > 1) {
+      paginaActual--;
+      dibujarProductos(paginaActual);
     }
   });
   paginacion.appendChild(atras);
 
   let indicador = document.createElement('span');
-  indicador.textContent = `Página ${currentPage} de ${totalPages}`;
+  indicador.textContent = `Página ${paginaActual} de ${totalPaginas}`;
   paginacion.appendChild(indicador);
 
-  let alante = document.createElement('button');
-  alante.textContent = '►';
-  alante.addEventListener('click', () => {
-    if (currentPage < totalPages) {
-      currentPage++;
-      dibujarProductos(currentPage);
+  let adelante = document.createElement('button');
+  adelante.textContent = '►';
+  adelante.addEventListener('click', () => {
+    if (paginaActual < totalPaginas) {
+      paginaActual++;
+      dibujarProductos(paginaActual);
     }
   });
-  paginacion.appendChild(alante);
+  paginacion.appendChild(adelante);
 
-  productos.appendChild(paginacion);
+  seccionProductos.appendChild(paginacion);
 }
 
-function mostrarModal(productName, productId) {
+function mostrarModal(nombreProducto, idProducto) {
   let modal = document.getElementById('modal');
   modal.style.display = 'block';
 
-  let nombreProducto = document.getElementById('nombre_producto');
-  nombreProducto.textContent = productName;
+  let nombreProductoModal = document.getElementById('nombre_producto');
+  nombreProductoModal.textContent = nombreProducto;
 
-  let existe = cart.find(item => item.id === productId);
+  let existe = carrito.find(item => item.id === idProducto);
   if (existe) {
-    cantidadModal.value = existe.quantity;
+    cantidadModal.value = existe.cantidad;
   } else {
     cantidadModal.value = 1;
   }
 
-  let añadirAlCarritoButton = document.getElementById('añadir_al_carrito');
+  let añadirAlCarritoBoton = document.getElementById('añadir_al_carrito');
   
-  añadirAlCarritoButton.addEventListener('click', añadirAlCarritoclick);
+  añadirAlCarritoBoton.addEventListener('click', añadirAlCarritoClick);
 
-  function añadirAlCarritoclick() {
+  function añadirAlCarritoClick() {
     let cantidad = parseInt(cantidadModal.value);
-    let existerestar = cart.find(item => item.id === productId);
-    if (existerestar) {
-      let difference = cantidad - existerestar.quantity;
-      addToCart(productId, difference);
+    let existeEnCarrito = carrito.find(item => item.id === idProducto);
+    if (existeEnCarrito) {
+      let diferencia = cantidad - existeEnCarrito.cantidad;
+      agregarAlCarrito(idProducto, diferencia);
     } else {
-      addToCart(productId, cantidad);
+      agregarAlCarrito(idProducto, cantidad);
     }
     cerrarModal();
     
-    añadirAlCarritoButton.removeEventListener('click', añadirAlCarritoclick);
+    añadirAlCarritoBoton.removeEventListener('click', añadirAlCarritoClick);
   }
 }
-
-
 
 function cerrarModal() {
   let modal = document.getElementById('modal');
@@ -224,52 +222,50 @@ function cerrarModal() {
 
 document.querySelector('.cerrar').addEventListener('click', cerrarModal);
 
-let cart = [];
+let carrito = [];
 
-function addToCart(productId, quantity) {
-  console.log(productId);
-  console.log(quantity);
-  let productToAdd = products.find(product => product.id === productId);
+function agregarAlCarrito(idProducto, cantidad) {
+  let productoAAgregar = productos.find(producto => producto.id === idProducto);
 
-  if (productToAdd) {
-    let existingCartItem = cart.find(item => item.id === productId);
-    if (existingCartItem) {
-      existingCartItem.quantity += quantity;
+  if (productoAAgregar) {
+    let itemExistente = carrito.find(item => item.id === idProducto);
+    if (itemExistente) {
+      itemExistente.cantidad += cantidad;
     } else {
-      cart.push({ ...productToAdd, quantity: quantity });
+      carrito.push({ ...productoAAgregar, cantidad: cantidad });
     }
     dibujarCarrito();
   }
 }
 
 function dibujarCarrito() {
-  let cartBody = document.getElementById('cart-body');
-  let totalAmountCell = document.getElementById('total-amount');
+  let cuerpoCarrito = document.getElementById('cart-body');
+  let celdaTotal = document.getElementById('total-amount');
   let total = 0;
 
-  cartBody.innerHTML = '';
+  cuerpoCarrito.innerHTML = '';
 
-  cart.forEach(item => {
-    let itemRow = document.createElement('tr');
+  carrito.forEach(item => {
+    let filaItem = document.createElement('tr');
 
-    let quantityCell = document.createElement('td');
-    quantityCell.textContent = item.quantity;
-    itemRow.appendChild(quantityCell);
+    let celdaCantidad = document.createElement('td');
+    celdaCantidad.textContent = item.cantidad;
+    filaItem.appendChild(celdaCantidad);
 
-    let nameCell = document.createElement('td');
-    nameCell.textContent = item.product;
-    itemRow.appendChild(nameCell);
+    let celdaNombre = document.createElement('td');
+    celdaNombre.textContent = item.producto;
+    filaItem.appendChild(celdaNombre);
 
-    let totalCell = document.createElement('td');
-    let itemTotal = item.price * item.quantity;
-    total += itemTotal;
-    totalCell.textContent = `${(itemTotal / 100).toFixed(2)}€`;
-    itemRow.appendChild(totalCell);
+    let celdaTotalProducto = document.createElement('td');
+    let totalItem = item.precio * item.cantidad;
+    total += totalItem;
+    celdaTotalProducto.textContent = `${(totalItem / 100).toFixed(2)}€`;
+    filaItem.appendChild(celdaTotalProducto);
 
-    cartBody.appendChild(itemRow);
+    cuerpoCarrito.appendChild(filaItem);
   });
 
-  totalAmountCell.textContent = `${(total / 100).toFixed(2)}€`;
+  celdaTotal.textContent = `${(total / 100).toFixed(2)}€`;
 }
 
-dibujarProductos(currentPage);
+dibujarProductos(paginaActual);
