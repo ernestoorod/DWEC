@@ -99,9 +99,10 @@ let productos = [
 
 let seccionProductos = document.getElementById("products-section");
 let seccionCarrito = document.getElementById("cart-section");
+let cantidadModal = document.getElementById("cantidad");
 let paginaActual = 1;
 let productosPorPagina = 8;
-let cantidadModal = document.getElementById("cantidad");
+
 
 function dibujarProductos(pagina) {
   seccionProductos.innerHTML = '';
@@ -182,6 +183,8 @@ function paginas(paginaActual) {
   seccionProductos.appendChild(paginacion);
 }
 
+
+
 function mostrarModal(nombreProducto, idProducto) {
   let modal = document.getElementById('modal');
   modal.style.display = 'block';
@@ -238,6 +241,14 @@ function agregarAlCarrito(idProducto, cantidad) {
   }
 }
 
+function eliminarDelCarrito(idProducto) {
+  let indice = carrito.findIndex(item => item.id === idProducto);
+  if (indice !== -1) {
+    carrito.splice(indice, 1);
+    dibujarCarrito();
+  }
+}
+
 function dibujarCarrito() {
   let cuerpoCarrito = document.getElementById('cart-body');
   let celdaTotal = document.getElementById('total-amount');
@@ -261,6 +272,15 @@ function dibujarCarrito() {
     total += totalItem;
     celdaTotalProducto.textContent = `${(totalItem / 100).toFixed(2)}€`;
     filaItem.appendChild(celdaTotalProducto);
+
+    let celdaEliminar = document.createElement('td');
+    let eliminarBoton = document.createElement('button');
+    eliminarBoton.classList.add('eliminar-icono');
+    eliminarBoton.addEventListener('click', () => {
+      eliminarDelCarrito(item.id);
+    });
+    celdaEliminar.appendChild(eliminarBoton);
+    filaItem.appendChild(celdaEliminar);
 
     cuerpoCarrito.appendChild(filaItem);
   });

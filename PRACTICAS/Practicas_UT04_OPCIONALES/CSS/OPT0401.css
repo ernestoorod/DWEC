@@ -187,3 +187,15 @@ body {
     margin-bottom: 1px;
     font-weight: bold;
 }
+
+.eliminar-icono {
+    width: 24px;
+    height: 24px;
+    background-image: url('https://cdn.icon-icons.com/icons2/1791/PNG/512/trashcan1_114647.png');
+    background-size: cover;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-left: 24px;
+  }
+  
