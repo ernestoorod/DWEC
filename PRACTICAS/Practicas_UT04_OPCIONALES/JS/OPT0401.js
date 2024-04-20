@@ -99,10 +99,9 @@ let productos = [
 
 let seccionProductos = document.getElementById("products-section");
 let seccionCarrito = document.getElementById("cart-section");
-let cantidadModal = document.getElementById("cantidad");
 let paginaActual = 1;
 let productosPorPagina = 8;
-
+let cantidadModal = document.getElementById("cantidad");
 
 function dibujarProductos(pagina) {
   seccionProductos.innerHTML = '';
@@ -276,6 +275,7 @@ function dibujarCarrito() {
     let celdaEliminar = document.createElement('td');
     let eliminarBoton = document.createElement('button');
     eliminarBoton.classList.add('eliminar-icono');
+    eliminarBoton.textContent = 'Eliminar';
     eliminarBoton.addEventListener('click', () => {
       eliminarDelCarrito(item.id);
     });
