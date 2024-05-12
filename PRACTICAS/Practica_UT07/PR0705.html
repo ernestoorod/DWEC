@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Tiempo</title>
+    <link rel="stylesheet" href="./CSS/PR0705.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Consulta de Tiempo</h1>
+        <form id="formulario">
+            <label for="nombreciudad">Introduce el nombre de una ciudad:</label>
+            <input type="text" id="nombreciudad" name="nombreciudad" required>
+            <label for="api">API Key:</label>
+            <input type="text" id="api" name="api" required>
+            <button type="submit">Consultar Tiempo</button>
+        </form>
+        <div id="informacion" class="hidden">
+            <h2 id="textoinformacion"></h2>
+            <div id="descripcion"></div>
+            <div id="icono"></div>
+            <div id="temperatura"></div>
+            <div id="humedad"></div>
+        </div>
+    </div>
+
+    <script src="./JS/PR0705.js"></script>
+</body>
+</html>
